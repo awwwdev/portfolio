@@ -5,7 +5,7 @@
   max-width: min(90vw, 60ch);
 }
 .max-w-page {
-  max-width: min(94vw, 100rem);
+  max-width: min(94vw, 50rem);
 }
 
 body {

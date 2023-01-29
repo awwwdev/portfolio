@@ -59,7 +59,7 @@ export const shortcuts: UserShortcuts = [
     "error-line": "bf-i-ph-x-circle flex ac gap-1 text-sm c-red10",
     "danger-line": "bf-i-ph-warning-octagon flex ac gap-1 text-sm c-red10",
     snack: "b b-gray7 bg-gray3 c-gray11 rd-lg p-4",
-    H1: "text-4xl fw-900 ls-tightest c-gray11",
+    H1: "text-4xl fw-900 ls-tightest c-gray12",
     H2: "text-3xl fw-900 ls-tight c-gray12",
     H3: "text-xl fw-900 ls-wide c-gray12 ",
     H4: "fw-900 ls-widest c-gray12",
@@ -76,11 +76,14 @@ export const shortcuts: UserShortcuts = [
   },
   [
     /^bf-i-(.*)$/,
-    ([, iconName]: string[]) => `before:content-none  before:inline-block before:vertical-middle before:i-${iconName}`,
+    ([, iconName]) =>
+      `before:opacity-40 before:mie-2 empty:before:mie-0 before:vertical-middle before:scale-120 before:content-none before:inline-block before:i-${iconName}`,
   ],
   [
     /^af-i-(.*)$/,
-    ([, iconName]: string[]) => `after:content-none before:inline-block before:vertical-middle after:i-${iconName}`,
+    ([, iconName]) =>
+      `after:opacity-40 after:mis-2 empty:after:mis-0 after:vertical-middle after:scale-120  after:content-none before:inline-block after:i-${iconName}`,
   ],
+  [/^ol-(.*)$/, ([, val]) => `outline-${val}`],
   [/^ol-(.*)$/, ([, val]: string[]) => `outline-${val}`],
 ];

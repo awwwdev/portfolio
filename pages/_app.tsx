@@ -11,9 +11,9 @@ import ThemeToggler from "@/components/ThemeToggler";
 
 import Head from "next/head";
 import Link from "next/link";
-import { Inter } from "@next/font/google";
+import { Sora } from "@next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const sora = Sora({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient({
@@ -25,8 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
       },
     },
   });
-
-  const a = "ff";
 
   return (
     <>
@@ -40,11 +38,14 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
-          <div className={`${inter.className} h-full grid`} style={{ gridTemplateRows: "auto 1fr auto" }}>
+          <div
+            className={`${sora.className} max-w-page mx-auto sm:px-8 h-full grid px-4`}
+            style={{ gridTemplateRows: "auto 1fr auto" }}
+          >
             <header>
-              <nav className="mx-auto max-w-page py-3 flex justify-between">
-                <Link href="/" className=" fw-900">
-                  LOGO
+              <nav className=" py-3  flex justify-between">
+                <Link href="/" className="bf-i-ph-house-simple-bold fw-900">
+                  <span className="sr-only">Home</span>
                 </Link>
                 <ThemeToggler className="" />
               </nav>
@@ -53,14 +54,19 @@ export default function App({ Component, pageProps }: AppProps) {
               <Component {...pageProps} />
             </main>
             <footer className="bg-gray2">
-              <div className="mx-auto max-w-page c-gray11 pb-3">
+              <div className="mx-auto  c-gray11 pb-3">
                 <div className="flex ac jc py-3">
                   {" "}
                   <Link className="" href="/">
-                    LOGO
+                    <span className="sr-only">Home</span>
                   </Link>
                 </div>
-                <div className="flex jc ac">This is the footer</div>
+                <div className="flex jc ac">
+                  <a href="https://github.com/vashmeen" className="flex ac gap-1 bf-i-logos-github-icon">
+                    {" "}
+                    My GitHub
+                  </a>
+                </div>
               </div>
             </footer>
           </div>

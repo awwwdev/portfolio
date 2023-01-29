@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  "@iconify-json/logos": ^1.1.22
   "@iconify-json/ph": ^1.1.3
   "@next/font": 13.1.2
   "@radix-ui/colors": ^0.1.8
@@ -42,6 +43,7 @@ dependencies:
   typescript: 4.9.4
 
 devDependencies:
+  "@iconify-json/logos": 1.1.22
   "@iconify-json/ph": 1.1.3
   "@radix-ui/colors": 0.1.8
   "@unocss/core": 0.48.4
@@ -128,6 +130,13 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution:
       { integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA== }
+
+  /@iconify-json/logos/1.1.22:
+    resolution:
+      { integrity: sha512-vlkTWWWzQ9eghWaoq2D51jPDJBhn6yvjr4TvRJxVPisIm0yDkvt2l4yq/QPonZBSaKuEXga5omDulJHIcSVR3A== }
+    dependencies:
+      "@iconify/types": 2.0.0
+    dev: true
 
   /@iconify-json/ph/1.1.3:
     resolution:
