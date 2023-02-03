@@ -18,6 +18,49 @@ export const rules: Rule[] = [
     /^grid-min-col-(.*)$/,
     ([, minColWidth]) => ({ "grid-template-columns": `repeat(auto-fill, minmax(min(${minColWidth}, 100%), 1fr))` }),
   ],
+  [/^g-auto-rows-\[(.*)\]$/, ([, val]) => ({ "grid-auto-rows": val })],
+  [/^g-auto-flow-\[(.*)\]$/, ([, val]) => ({ "grid-auto-flow": val })],
+  [/^g-auto-cols-\[(.*)\]$/, ([, val]) => ({ "grid-auto-columns": val })],
+  [/^g-area-\[(.*)\]$/, ([, val]) => ({ "grid-area": val })],
+  [/^g-row-\[(.*)\]$/, ([, val]) => ({ "grid-row": val })],
+  [/^g-col-\[(.*)\]$/, ([, val]) => ({ "grid-column": val })],
+  // [/^g-areas-\[(.*)\]$/, ([, val]) => ({ "grid-template-areas": val })],
+  [
+    /^g-cols-\[(.*)\]$/,
+    ([, val]) => {
+      const cols = val
+        .trim()
+        .split("|")
+        .map((col) => col.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
+        .map((v) => `${v.trim()}`)
+        .join(" ");
+      return { "grid-template-columns": cols };
+    },
+  ],
+  [
+    /^g-rows-\[(.*)\]$/,
+    ([, val]) => {
+      const rows = val
+        .trim()
+        .split("|")
+        .map((row) => row.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
+        .map((v) => `${v.trim()}`)
+        .join(" ");
+      return { "grid-template-rows": rows };
+    },
+  ],
+  [
+    /^g-areas-\[(.*)\]$/,
+    ([, val]) => {
+      const areas = val
+        .trim()
+        .split("|")
+        .map((area) => area.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
+        .map((v) => `'${v.trim()}'`)
+        .join(" ");
+      return { "grid-template-areas": areas };
+    },
+  ],
 ];
 export const shortcuts: UserShortcuts = [
   {
@@ -32,6 +75,7 @@ export const shortcuts: UserShortcuts = [
     "tab-link": "b rd-lg text-center  px-4 py-2 hover:(b-orange7 c-orange11) data-[in-path]:(b-orange7 c-orange11)",
     "tab-radix": "b b-orange6 c-orange11 rd-2xl hover:(b-orange7 c-orange12)  data-[state=active]:(bg-orange3)",
     "btn-disabled": "!c-gray9 !bg-gray5 !b-gray5",
+    "btn-text": "fw-500 px-4 py-1 rd-lg b-transparent",
     "btn-prm":
       "flex jc ac gap-1 b-1 uppercase  fw-500 px-4 py-1 rd-lg b-orange10 bg-orange10 c-white  hover:(bg-orange9 b-orange9) focus:(bg-orange9 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
     btn: "flex jc ac gap-1 b-1 uppercase  fw-500 px-4 py-1 rd-lg b-gray10 bg-gray10 c-white  hover:(bg-gray9 b-gray9) focus:(bg-gray9 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
@@ -82,7 +126,7 @@ export const shortcuts: UserShortcuts = [
   [
     /^af-i-(.*)$/,
     ([, iconName]) =>
-      `after:opacity-40 after:mis-2 empty:after:mis-0 after:vertical-middle after:scale-120  after:content-none before:inline-block after:i-${iconName}`,
+      `after:opacity-40 after:mis-2 empty:after:mis-0 after:vertical-middle after:scale-120  after:content-none after:inline-block after:i-${iconName}`,
   ],
   [/^ol-(.*)$/, ([, val]) => `outline-${val}`],
   [/^ol-(.*)$/, ([, val]: string[]) => `outline-${val}`],

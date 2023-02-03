@@ -44,16 +44,14 @@ export default function App({ Component, pageProps }: AppProps) {
           >
             <header>
               <nav className=" py-3  flex justify-between">
-                <Link href="/" className="bf-i-ph-house-simple-bold fw-900">
-                  <span className="sr-only">Home</span>
-                </Link>
+                <Link href="/" className="bf-i-ph-house-simple-bold fw-900" title="Home" />
                 <ThemeToggler className="" />
               </nav>
             </header>
             <main>
               <Component {...pageProps} />
             </main>
-            <footer className="bg-gray2">
+            <footer className="">
               <div className="mx-auto  c-gray11 pb-3">
                 <div className="flex ac jc py-3">
                   {" "}
@@ -62,10 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   </Link>
                 </div>
                 <div className="flex jc ac">
-                  <a href="https://github.com/vashmeen" className="flex ac gap-1 bf-i-logos-github-icon">
-                    {" "}
-                    My GitHub
-                  </a>
+                  <p className="text-note text-2xs">Built, of course by myself :|</p>
                 </div>
               </div>
             </footer>

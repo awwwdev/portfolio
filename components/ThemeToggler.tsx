@@ -15,13 +15,22 @@ const ThemeToggler = ({ ...props }: HTMLAttributes<HTMLButtonElement>) => {
   return (
     <button onClick={(e) => toggleTheme()} className="bg-red3" {...props}>
       {theme === "system" && (
-        <span className="bf-i-ph-circle-half sr-only sm:not-sr-only capitalize flex gap-1 ac jc">Auto</span>
+        <>
+          <span className="bf-i-ph-circle-half "></span>
+          <span className="sr-only">Auto</span>
+        </>
       )}
       {theme === "dark" && (
-        <span className="bf-i-ph-moon sr-only sm:not-sr-only capitalize flex gap-1 ac jc">Dark</span>
+        <>
+          <span className="bf-i-ph-moon "></span>
+          <span className="sr-only">Dark</span>
+        </>
       )}
       {theme === "light" && (
-        <span className="bf-i-ph-sun sr-only sm:not-sr-only capitalize flex gap-1 ac jc">Light</span>
+        <>
+          <span className="bf-i-ph-sun "></span>
+          <span className="sr-only">Light</span>
+        </>
       )}
     </button>
   );
