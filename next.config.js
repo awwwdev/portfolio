@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
 
+// const withMDX = require("@next/mdx")({
+//   extension: /\.mdx?$/,
+// });
 // const path = require('path');
 const UnoCSS = require("@unocss/webpack").default;
 
-const nextConfig = {
+const { withContentlayer } = require("next-contentlayer");
+
+const nextConfig = withContentlayer({
   // experimental: {
   //   appDir: true,
   // },
@@ -19,6 +24,7 @@ const nextConfig = {
     );
     return config;
   },
-};
+  // pageExtensions: ["tsx", "md", "rtl.md", "rtl.mdx", "js", "jsx", "mdx"],
+});
 
 module.exports = nextConfig;

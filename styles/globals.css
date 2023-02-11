@@ -112,3 +112,8 @@ a {
 .t-gap-xl > * + * {
   margin-block-start: 1.5em;
 }
+
+
+.article  > * + * {
+  margin-block-start: 1.5em;
+}

@@ -1,0 +1,78 @@
+---
+title: "DBILIA, Refactored and Redesigned"
+date: "2023-02-03"
+---
+
+<img src='dbilia-logo-light-mode' alt="DBILIA LOGO" />
+[DBILIA](https://dbilia.com/) is a NFT Marketplace.
+
+<img alt='redesign' src='/dbilia/redesign1.png' />
+This project was challenging ones to me, especially right after the graduating from my bootcamp. But definietly empowered my reafctoring muscles and proved how a well refactored code base can easilly be changed to meet new requirements.
+
+When I joined the team, when the project was just approved as an MVP. All the code was wriiten in a rush, which is not necessary a bad thing. But was very hard to maintain and scale, and a refactoring was needed.
+
+## Refactoring
+
+My taskes was to find any bug or inconsistancy in the UI and fix it. I found many bugs listed in the Trello board and started to tackle one by one. But after a while I found tracking down a simple bug could easily take a day. So I started refactoring.
+
+Generally my process was like below. It was not always in the same order thoguh.
+
+- break big chunk of code to smaller ones. Like make a section of the page to a component.
+- Create components for frequenly used elements like buttons, inputs, etc, and replace them with the new components.
+- Remove all the inline styles and move them to Sass files.
+- Remove and Javascript functionality that can be handled by CSS, such as media query hooks, and write the CSS for it.
+- CSS Grid was overused in the project, in places where flexbox where more appropriate. So I replaced them with flexbox and it was three time less code!
+- I replaced Sass Variables with CSS Variables, casue I could use them in run time and creating a dark mode was much easier.
+- I used React-joy-ride to create the tour for the new users. So many coupled lines of code was removed.
+- I used formik helper compoents to make forms more consise.
+
+## Redesigning
+
+Some monthes in the project, I saw there where many desgin takes here and there. At this point the code was looking much better, but wasn't looking good in the browser.
+
+So, I suggested to redesign the app instead of doing case by case design fixes. I had to deliver the design in Figma. It's one of my first times to try Figma but it was much more intuitive that Adobe software and I never went back to Adobe!
+
+<img alt='redesign' src='/dbilia/redesign.png' />
+
+After the design finished, I staterd to impleiment it. And it didn't took long.
+
+The thign I changed was:
+valeus of CSS Variables
+
+styels in the componetns
+a walk through each page, changing layouts and pulishing the styels.
+
+<img alt='redesign' src='/dbilia/redesign2.png' />
+
+### A file with +2000 lines of code
+
+For example there was a file with +2000 lines of code. It was page where user could create a new NFT. It constists of a from, with many inputs, validatiosn and also a tour for the new users. Plus the resonsivness was handled by Javascript was coupled inside other logics.
+
+I just needed to fix some styling, but the code was not workable!
+
+1. I strated break it into some big chuncks with Internal Components.
+
+2. The styles in the project where comming from different sources. Some where inline, Some from the globall sass files and some where bundled with AndDesing components. I moved the inline styels into the right palace it sass files. AntD components where also problematic cause there was no way safely override the styels and use the unstyels and the components were not tree shakable. I keep them for a while but gradually I replaced them with my own components.
+
+3. Then removed all the `width > 640 && <>...</>` and `width = useWidth()` stuff, and handled the responsiveness with CSS.
+
+4. Thing was still very messy. The logic for the tour. Unreadblele codes like `onClick={() => if(!tour|| createTour.step !== 5) handleCreateNFT}` where everywhere. So, I needed to decouple that. I used React-joy-ride. It removed many lines of code. I just needed to add ids or special classNames to differnet sections of the page, and in a separate file I defiend the steps and messages of each steps.
+
+5. Finally I created some cusotme `<Input />` component, to encapsulate the validation, error messages and reuses styles.
+
+The +2000 lines file was now a 500 lines of code and workable and scalable.
+
+Later I added more complex responsivess to. while the tour still working without a problem. Here is the result:
+
+<video alt='Responsiveness' src='/dbilia/responsive.mp4' controls muted controlList='nodownload nofullscreen' >
+</video>
+
+the code was very coupled and long.
+I refactored the code to make it more readable and maintainable.
+
+I used
+
+- React-joy-ride to create the tour for the new users
+- React-query to fetch the data from the API
+- React-hook-form to handle the forms
+

@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
           >
             <header>
               <nav className=" py-3  flex justify-between">
-                <Link href="/" className="bf-i-ph-house-simple-bold fw-900" title="Home" />
+                <Link href="/" className="bf-i-ph-house-simple fw-900" title="Home" />
                 <ThemeToggler className="" />
               </nav>
             </header>

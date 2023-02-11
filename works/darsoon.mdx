@@ -1,0 +1,82 @@
+---
+title: "Darsoon, Restarting an Startup"
+date: "2023-02-03"
+---
+
+## About Darsoon
+
+This project was the one I learned most out of. It was complete full stack project, plus automated data migration.
+
+Darsoon is a startup based in Toronto, provide online private classes to Iranian kids.
+
+The stratup is launched in the midst of Covid lockdown, by a groupd Iraninas as their side hubby.
+
+Initially the website was created by WIX and all the business data where manually entered in Google Sheets. Soon they get more and more users and currently the have around 3000 online session each month.
+
+Even though they had a member in tehir team with crazy Google Sheet Skills and wrote lots automating logic into it, but now the Google Sheet has reached it's limit with more 80000 records of different datas. Beside, they still need to insert everything manually and have hired a dedicated person for this task.
+
+## Result
+
+### Migration Tool
+
+A tailord NODE.js migration program that fetch data from Google Sheet, validates it, cast it, created nessesary Foreign Keys and insert it to Supabase (PostgreSQL) database.
+
+### Dashboards for admins, teachers and Students
+
+A full dashboard with all the functionalities each role needs. After implimenting dashboards, Darsoon completly free of heavy loaded and lagging Google Sheet. Supabase, Nextjs, React query and React Table was used for this part.
+
+### A Fully Redesigned Website with integrated Stripe payments
+
+All the pages where redesigned and recreated, along the dashboard pages.
+And the final piece to make the system all automatic was payment system.
+We implimented the payment with stripe and integrated all the way back to supabase.
+
+### Previously overloaded Startup Adminstrators now are free for more meaningfull work
+
+Manual Data Entry workload (+100 records a day) has almost completly automated.
+
+Before admins where responsible to collect data from WIX, Google Forms and messages and enter them manually in the Google Sheet.
+
+Another bottelneck that was completely tackled is calculating Monthly payments for teachers. Everyting is calculated automatically.
+
+Previously, it was one week of work to calculate and pay the teachers. The slow process could only calculate the monthly payroll for only 10 teachers.
+
+Now, the system can tell admin how much should each teacher be payed, at any moment. Teachers also see the same report in their dashboard. This could not be possible with the initial data structure. Therfor I changed the schema to be able to have this feature, without lossing any data or relationship between data.
+
+Teachers and Students have their own dedicated dashboards that can check anytime and is always up to date. There is no more argument from teachers about not conting their sessios correctly.
+
+## Learning
+
+The experience was so rewarding in terms of learning and understanding things. Here are the few I can think of:
+
+- Understanding how to design a system to migrate data from structure A to structure B, no matter which kind of Database or Schema they have, and how unclean is the data
+
+- Mastering how to use supabase in any project, understanding the tradoffs and where it fits your product
+
+- adding some more bits to my SQL knowkedge
+
+## Data migration
+
+I wrote a node js migration program tailored to their data, which one each migration iteration, checks all the types, checkes the existance data field if a field is required and insert data to Supabase, Table by Table.
+Also, when needed the migration, fetches and filter data from previously inserted data, to created Foreign Keys.
+
+Users are the first entity that are migrated. The process for Migrating Users is the same, except instead of inserting, the program assign a random and strong password to each user, sign them up in Supabase Authentication service. Then a record of nonsensitive user info is inserted normal table, so it would be easier to query users in Admin Dashboard.
+
+I have to say this part was the most frustrating part. Simply becasue the data in Google Sheet was not even close to a clean data. What I thought I could do in two weeks, took two months. But, If I go back and redo it, I can do it in maybe in a week.
+
+{/* Here is how: */}
+
+## Dashboards
+
+This part was more fun. I created a custom Table with React Table that could do handle Global filters, column filters and sorting.
+
+Also I created a form component based on ract-hook-form and zod validator.
+
+Also I implimented the full Authentication.
+Supabase comes with some react component for Authentication which are very nice. But I need more control, and wanted to integrate it with react query.
+
+For that reason, I created my own login, sign-up, reset-password and change passwird forms. I rarely get involved with authentication in the teams. So this part wven though not the most complex part of the dashboard, was the one I was very proud of. It felt so good to figure authentication system, especially when I reseted my passsword and logined with my new password.
+
+## Public Website
+
+More about this part soon.
