@@ -113,7 +113,6 @@ a {
   margin-block-start: 1.5em;
 }
 
-
-.article  > * + * {
+.article > * + * {
   margin-block-start: 1.5em;
 }

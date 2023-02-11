@@ -2,7 +2,7 @@ import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { MyButton } from './[slug]';
+import { MyButton } from "./[slug]";
 
 export async function getStaticProps() {
   const posts: Post[] = allPosts.sort((a, b) => {
