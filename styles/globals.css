@@ -9,12 +9,16 @@
 }
 
 body {
-  font-family: "Inter", "Roboto", "Vazirmatn", system-ui, sans-serif;
+  font-family: "Inter", "Roboto",  system-ui, sans-serif;
 }
 
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
     monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Sora", "Inter", "Roboto",  system-ui, sans-serif;
 }
 
 html {

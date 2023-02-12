@@ -8,6 +8,7 @@ export default function Home() {
       </section>
       <section aria-label="Works" className="mt-50 rd-xl">
         <h2 className="H1">Works</h2>
+
         <ul className="mt-20 space-y-32">
           <Darsoon />
           <Dbilia />
@@ -51,6 +52,8 @@ const Darsoon = () => {
   return (
     <>
       <Card
+        color="c-orange-11"
+        bg="bg-orange5"
         title="DARSOON"
         href="/works/darsoon"
         subtitle={
@@ -76,8 +79,11 @@ const Darsoon = () => {
     </>
   );
 };
+
 const Dbilia = () => (
   <Card
+    color="c-violet11"
+    bg="bg-violet5"
     title="Dbilia"
     href="/works/dbilia"
     subtitle={
@@ -107,11 +113,15 @@ type CardProps = {
   subtitle: React.ReactNode;
   children: React.ReactNode;
   stack: React.ReactNode;
+  bg?: string;
+  color?: string;
 };
 
 const Momenta = () => {
   return (
     <Card
+      color="c-purple11"
+      bg="bg-purple5"
       title="MOMENTA"
       href="/works/momenta"
       subtitle={
@@ -138,15 +148,25 @@ const Momenta = () => {
   );
 };
 
-const Card = ({ title = "", subtitle = "", stack, href, children = null }: CardProps) => {
+const Card = ({
+  title = "",
+  subtitle = "",
+  stack,
+  href,
+  children = null,
+  color = "c-violet11",
+  bg = "bg-violet5",
+}: CardProps) => {
   return (
     <article>
       <div className="grid g-areas-[title|overlap|card] g-rows-[auto_3rem_auto] sm:g-areas-[title_overlap_card] sm:g-cols-[auto_6rem_auto] ">
         <div className="lt-sm:mis-10 sm:mt-10  z-1 g-col-[1/-1] g-row-[title/overlap] sm:g-col-[title/overlap] sm:g-row-[1/-1] ">
-          <h3 className="H1 c-violet11">{title}</h3>
-          <p className="H2 mt-4 fw-400 c-violet11 ">{subtitle}</p>
+          <h3 className={`H1 ${color}`}>{title}</h3>
+          <p className={`H2 mt-4 fw-400 ${color} `}>{subtitle}</p>
         </div>
-        <div className="rd-xl overflow-hidden bg-violet5 min-h-100 p-10 pbs-30 flex flex-col g-col-[1/-1] g-row-[overlap/card] sm:(min-h-80 g-row-[1/-1] g-col-[overlap/card] pis-40 pbs-10 )  ">
+        <div
+          className={`rd-xl overflow-hidden ${bg} min-h-100 p-10 pbs-30 flex flex-col g-col-[1/-1] g-row-[overlap/card] sm:(min-h-80 g-row-[1/-1] g-col-[overlap/card] pis-40 pbs-10 )  `}
+        >
           {children}
           <div className="mt-auto flex flex-col gap-8 sm:(flex-row justify-between ac)">
             <ul aria-label="Stack Used" className="flex  gap-2">

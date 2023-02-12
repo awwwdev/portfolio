@@ -11,9 +11,10 @@ import ThemeToggler from "@/components/ThemeToggler";
 
 import Head from "next/head";
 import Link from "next/link";
-import { Sora } from "@next/font/google";
+import { Sora, Inter } from "@next/font/google";
 
 const sora = Sora({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient({
@@ -39,7 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
           <div
-            className={`${sora.className} max-w-page mx-auto sm:px-8 h-full grid px-4`}
+            className={`${inter.className} max-w-page mx-auto sm:px-8 h-full grid px-4`}
             style={{ gridTemplateRows: "auto 1fr auto" }}
           >
             <header>
