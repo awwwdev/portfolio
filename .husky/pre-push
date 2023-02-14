@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🏗️👷 Build test 🏗️👷'
+
+echo '🤔📦 Running Build Test...'
+pnpm run build ||
+(
+    echo '⛔ Build Faied. Fix build error and push egain.'
+    false;
+)
