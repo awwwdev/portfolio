@@ -1,7 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '🏗️👷Running  Build test ... 🏗️👷'
+echo '🏗️👷Running  Pre Push test ... 🏗️👷'
 
 pnpm run build ||
 (
