@@ -6,8 +6,11 @@ export default function Home() {
       <section aria-label="introduction" className=" rd-xl py-8 min-h-80">
         <Intro />
       </section>
-      <section aria-label="Works" className="mt-50 rd-xl">
-        <h2 className="H1">Works</h2>
+      <section aria-label="Works" id="works" className="mt-50 rd-xl">
+        <div className="flex gap-1 items-baseline">
+          <h2 className="H1">Works</h2>
+          <img src="/3d-icons/fire.png" alt="fire" className="w-15 translate-y-2" />
+        </div>
 
         <ul className="mt-20 space-y-32">
           <Darsoon />
@@ -15,7 +18,14 @@ export default function Home() {
           <Momenta />
         </ul>
       </section>
-      <section aria-label="contact" className="my-50 rd-xl space-y-4">
+      <section aria-label="about" id="about" className="my-50 rd-xl space-y-4">
+        <div className="flex gap-1 items-baseline">
+          <h2 className="H1">About Me</h2>
+          <img src="/3d-icons/dino.png" alt="dinosaur" className="w-15 translate-y-2" />
+        </div>
+        <AboutMe />
+      </section>
+      <section aria-label="contact" id="contact" className="my-50 rd-xl space-y-4">
         <GetInTouch />
       </section>
     </div>
@@ -84,7 +94,7 @@ const Dbilia = () => (
   <Card
     color="c-violet11"
     bg="bg-violet5"
-    title="Dbilia"
+    title="DBILIA"
     href="/works/dbilia"
     subtitle={
       <>
@@ -208,48 +218,16 @@ const Teaching = () => {
   );
 };
 
-const MoreAboutMe = () => {
-  return (
-    <details className="text-note mt-10">
-      <summary>More About Me</summary>
-      <div className="p-4">
-        <p>I am a Web Developer and a Designer, obsessed with UI and Design System.</p>
-        <p>
-          As a Developer with design background, I searched a lot how to achieve the visuals I want. Eventually I was
-          called CSS Master by my teammates!
-        </p>
-        <p>
-          Soon with any new project, All the design, css and UI tasks were left to me, plus so much freedom to how I
-          want to get them done!
-        </p>
-        <p>So, I tested many things!</p>
-        <p>Now, I trying to find ways to build things with the least codes.</p>
-        <p>And searched, watched tones YouTubes and tutorials </p>
-        <p>Now I am developing my own design system.</p>
-        <p>I am writing some of my experiments and thoughts here.</p>
-      </div>
-
-      <div>
-        Hamid is a creative and enthusiastic Full-stack developer with an extensive design background. He is eager to
-        bridge the gap between design and code and find solutions to develop aesthetic, accessible, and engaging
-        products fast and scalable. Experienced with MERN stack and React Ecosystem as well as various design and user
-        analytical tools. • Created and implemented accessible design systems and UI libraries with responsiveness and
-        dark mode built-in for different projects to support agile frontend development • built highly customizable and
-        reusable UI components with developer experience in mind, to unified UI coding style across team members •
-        Ideated, designed, and Developed Highly Creative Landing Pages using Framer animation library and modern CSS
-        features • Created Full-stack web application using MERN stack and RESTful API design and deployed on Netlify
-        and Heroku • Contributed to the development of backend applications and designing SQL and NoSQL Database schemas
-      </div>
-    </details>
-  );
-};
-
 const GetInTouch = () => {
   return (
     <>
       <h2 className="H1"> Get in touch</h2>
-      <a href="" className="btn-prm max-w-50 bf-i-ph-envelope-simple before:opacity-70">
-        EMAIL ME
+
+      <p>Feel free to contact me.</p>
+      <p className="!mt-0">I try my best to reach back to you soon!</p>
+      <a href="mailto:hamidpm@pm.me" className="btn-prm !mt-6 !flex gap-1 ac py-2 max-w-50">
+        <img src="/3d-icons/envelop.png" alt="Envelop" className="w-10 flex ac jc scale-150 rotate-20 " />
+        <span className="pis-4  fw-900 ">EMAIL ME</span>
       </a>
     </>
   );
@@ -259,14 +237,15 @@ const Intro = () => {
   return (
     <>
       <div className="mt-50">
-        <div className="flex gap-1 H1">
-          <span className="fw-200">Hi! I am</span>
-          <h1>Hamid </h1>
-          👋
+        <div className="flex gap-1 items-baseline">
+          <h1 className="H1">
+            <span className="fw-200">Hi! I am</span> <span className="">Hamid </span>
+          </h1>
+          <img src="/3d-icons/waving-hand.png" alt="waving-hand" className=" w-15" />
         </div>
-        <p className="mt-10 max-w-100">I create apps that look beautiful both in the browser and vscode.</p>
+        <p className="mt-6 max-w-100">I create beautiful apps with clean code.</p>
       </div>
-      <MoreAboutMe />
+      {/* <MoreAboutMe /> */}
     </>
   );
 };
@@ -278,3 +257,32 @@ const StackLogo = ({ icon = "", title = "", bgColor = "bg-grayA-7" }) => (
     </span>
   </li>
 );
+
+const MoreAboutMe = () => {
+  return (
+    <details className=" mt-6 space-y-6">
+      <summary className="w-fit p-2 b-gray5 text-tiny-note"> A little more about me</summary>
+    </details>
+  );
+};
+
+const AboutMe = () => {
+  return (
+    <div className=" space-y-4">
+      <p>I am Web Developer and a Designer.</p>
+      <p>
+        Currently, I am obsessed with Design System and bridging the gap between Design and Development islands.
+        Currently I am planning out to build a customizable and accessible Design System with modern CSS technologies.
+      </p>
+      <p>
+        I do Backend and Database stuff time to time for my freelance gigs and side projects. In the teams however, I am
+        mostly left with all the Design and Frontend tasks. Everyone happier this way!
+      </p>
+      <p>
+        Beside work, I love Art and Music. In fact, I wanted to be an artist not a while back. But I&apos;ve been busy
+        learning web development stuff. In the future I want to work on things that combine Art and Web Technologies
+        together!
+      </p>
+    </div>
+  );
+};
