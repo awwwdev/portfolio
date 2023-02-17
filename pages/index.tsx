@@ -30,7 +30,7 @@ const Darsoon = () => {
       <Card
         logoSrc="/dbilia/logo.png"
         color="c-orange-11"
-        bg="bg-orange5"
+        bg="bg-orange4"
         title="DARSOON"
         href="/works/darsoon"
         subtitle={
@@ -61,7 +61,7 @@ const Dbilia = () => (
   <Card
     logoSrc="/dbilia/logo.png"
     color="c-violet11"
-    bg="bg-violet5"
+    bg="bg-violet4"
     title="DBILIA"
     href="/works/dbilia"
     subtitle={
@@ -102,9 +102,9 @@ type CardProps = {
 const Momenta = () => {
   return (
     <Card
-      logoSrc="/dbilia/logo.png"
+      logoSrc="/momenta/logo.png"
       color="c-purple11"
-      bg="bg-purple5"
+      bg="bg-purple4"
       title="MOMENTA"
       href="/works/momenta"
       subtitle={
@@ -139,7 +139,8 @@ const Card = ({
   href,
   children = null,
   color = "c-violet11",
-  bg = "bg-violet5",
+  bg = "bg-violet4",
+  btnColor="bg-violet6"
 }: CardProps) => {
   return (
     <article className={`rd-xl overflow-hidden min-h-180 p-10 flex flex-col gap-16  ${bg}`}>
@@ -157,7 +158,7 @@ const Card = ({
       </ul>
       {children}
       <div className="mt-auto flex justify-end ">
-        <Link href={href} className="flex ac jc p6 rd-xl bg-red3">
+        <Link href={href} className={`flex ac jc p6 rd-xl bg-grayA-3  ${color} `}>
           <span className="i-ph-arrow-right inline-block text-4xl" />
           <span className="sr-only"> Learn more</span>
         </Link>
