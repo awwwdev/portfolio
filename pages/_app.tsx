@@ -12,6 +12,8 @@ import ThemeToggler from "@/components/ThemeToggler";
 import Head from "next/head";
 import Link from "next/link";
 import { Sora, Inter } from "@next/font/google";
+import About from "@/components/About";
+import GetInTouch from "@/components/GetInTouch";
 
 const sora = Sora({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -39,29 +41,36 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
-          <div
-            className={`${inter.className} max-w-page mx-auto sm:px-8 h-full grid px-4`}
-            style={{ gridTemplateRows: "auto 1fr auto" }}
-          >
+          <div className={`${inter.className}  h-full  `} style={{ gridTemplateRows: "auto 1fr auto" }}>
             <header>
-              <nav className=" py-3  flex justify-between">
+              <nav className=" py-3  flex justify-between max-w-page mx-auto sm:px-8grid px-4">
                 <Link href="/" className="bf-i-ph-house-simple fw-900" title="Home" />
                 <ThemeToggler className="" />
               </nav>
             </header>
             <main>
               <Component {...pageProps} />
+              <section
+                aria-label="About me"
+                id="about"
+                className="my-50 rd-xl space-y-4 max-w-page  mx-auto sm:px-8 px-4"
+              >
+                <About />
+              </section>
+              <section aria-label="Contact" id="contact" className=" py16 bg-teal2 min-h-100 ">
+                <GetInTouch />
+              </section>
             </main>
-            <footer className="">
+            <footer className="bg-mint3">
               <div className="mx-auto  c-gray11 pb-3">
-                <div className="flex ac jc py-3">
-                  {" "}
-                  <Link className="" href="/">
-                    <span className="sr-only">Home</span>
-                  </Link>
-                </div>
+                <nav className="flex ac jc py-4 gap-4 text-note">
+                  <Link href="/#works">Works</Link>
+                  <Link href="/#blog">Blog</Link>
+                  <Link href="/#About Me">About Me</Link>
+                  <Link href="/#Contact">Contact</Link>
+                </nav>
                 <div className="flex jc ac">
-                  <p className="text-note text-2xs">Built, of course by myself :|</p>
+                  <p className="text-note text-2xs">Built from fresh Open Source ingredients, of course by myself :|</p>
                 </div>
               </div>
             </footer>

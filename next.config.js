@@ -17,11 +17,15 @@ const nextConfig = withContentlayer({
   // typescript: {
   //   ignoreBuildErrors: true,
   // },
-  webpack(config) {
+  webpack(config, context) {
     config.cache = false;
     config.plugins.push(
       UnoCSS() // <--
     );
+
+    if (context.buildId !== "development") {
+      config.cache = false;
+    }
     return config;
   },
   // pageExtensions: ["tsx", "md", "rtl.md", "rtl.mdx", "js", "jsx", "mdx"],

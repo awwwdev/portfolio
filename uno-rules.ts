@@ -64,7 +64,6 @@ export const rules: Rule[] = [
 ];
 export const shortcuts: UserShortcuts = [
   {
-    "mccc-5 ccc-blue5": "c-blue5",
     "iso-rel": "relative isolate",
     field: "px-2 py-1 rd b-0 bg-gray3",
     chip: "no-underline rd-xl px-4 py-2 bg-gray3 c-gray11 hover:(bg-gray4)",

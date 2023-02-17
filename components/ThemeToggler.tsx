@@ -13,7 +13,7 @@ const ThemeToggler = ({ ...props }: HTMLAttributes<HTMLButtonElement>) => {
     );
 
   return (
-    <button onClick={(e) => toggleTheme()} className="bg-red3" {...props}>
+    <button onClick={(e) => toggleTheme()} className="" {...props}>
       {theme === "system" && (
         <>
           <span className="bf-i-ph-circle-half "></span>
