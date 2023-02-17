@@ -7,7 +7,7 @@ const About = () => {
       </div>
       <div className=" space-y-4">
         <p className="">
-          <strong className='fw-700'>I am Web Developer and a Designer.</strong>
+          <strong className="fw-700">I am Web Developer and a Designer.</strong>
         </p>
         <p>
           Currently, I am obsessed with Design System and bridging the gap between Design and Development. I am planning

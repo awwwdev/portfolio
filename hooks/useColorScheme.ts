@@ -2,7 +2,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 const useColorScheme = () => {
-  const { theme, setTheme , resolvedTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [hasMountedInBrowser, setHasMountedInBrowser] = useState(false);
   useEffect(() => {
     setHasMountedInBrowser(true);
