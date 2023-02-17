@@ -10,7 +10,7 @@ const About = () => {
           <strong className="fw-700">I am Web Developer and a Designer.</strong>
         </p>
         <p>
-          Currently, I am obsessed with Design System and bridging the gap between Design and Development. I am planning
+          I am obsessed with Design System and bridging the gap between Design and Development. I am planning
           out to build a customizable and accessible Design System with modern CSS technologies.
         </p>
         <p>
