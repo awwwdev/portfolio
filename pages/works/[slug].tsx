@@ -30,7 +30,7 @@ const PostLayout = ({ post }: { post: Post }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <article className="max-w-xl mx-auto py-8 article">
+      <article className=" py-8 article max-w-xl mx-auto sm:px-8 px-4">
         <div>
           <h1 className="H1">{post.title}</h1>
           <time dateTime={post.date} className="text-xs text-gray-600 mb-1">
