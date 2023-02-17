@@ -4,7 +4,9 @@
 
 :root {
   --header-height: 2.5em;
+  scroll-behavior: smooth;
 }
+
 .max-w-article {
   max-width: min(90vw, 60ch);
 }

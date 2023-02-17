@@ -53,24 +53,26 @@ export default function App({ Component, pageProps }: AppProps) {
               <section
                 aria-label="About me"
                 id="about"
-                className="my-50 rd-xl space-y-4 max-w-page  mx-auto sm:px-8 px-4"
+                className="my-50 rd-xl space-y-4 max-w-page  mx-auto sm:px-8 px-4 "
               >
                 <About />
               </section>
-              <section aria-label="Contact" id="contact" className=" py16 bg-teal2 min-h-100 ">
+              <section aria-label="Contact" id="contact" className="py16 pb32 ">
                 <GetInTouch />
               </section>
             </main>
-            <footer className="bg-mint3">
-              <div className="mx-auto  c-gray11 pb-3">
-                <nav className="flex ac jc py-4 gap-4 text-note">
+            <footer className=" pb6">
+              <div className="mx-auto max-w-page sm:px-8 px-4   pb-3 ">
+                <nav className="flex ac  py-4 gap-4 c-gray9 text-note b-t-1 b-gray5">
                   <Link href="/#works">Works</Link>
                   <Link href="/#blog">Blog</Link>
                   <Link href="/#About Me">About Me</Link>
                   <Link href="/#Contact">Contact</Link>
                 </nav>
-                <div className="flex jc ac">
-                  <p className="text-note text-2xs">Built from fresh Open Source ingredients, of course by myself :|</p>
+                <div className="flex  ac">
+                  <p className="text-note c-gray9 text-2xs">
+                    Built from fresh Open Source ingredients, of course by myself :|
+                  </p>
                 </div>
               </div>
             </footer>

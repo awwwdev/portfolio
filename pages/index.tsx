@@ -1,6 +1,9 @@
 import Intro from "@/components/Intro";
 import Link from "next/link";
 import About from "@/components/About";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import useColorScheme from "@/hooks/useColorScheme";
 
 export default function Home() {
   return (
@@ -13,13 +16,12 @@ export default function Home() {
           <h2 className="H1">Works</h2>
           <img src="/3d-icons/fire.png" alt="fire" className="w-15 translate-y-2" />
         </div>
-        <ul className="mt-20 space-y-32">
+        <ul className="mt-20 space-y-12 sm:space-y-32">
           <Darsoon />
           <Dbilia />
           <Momenta />
         </ul>
       </section>
-     
     </div>
   );
 }
@@ -28,7 +30,8 @@ const Darsoon = () => {
   return (
     <>
       <Card
-        logoSrc="/dbilia/logo.png"
+        logoSrc="/darsoon/logo.png"
+        darkLogoSrc="/darsoon/logo-dark.png"
         color="c-orange-11"
         bg="bg-orange4"
         title="DARSOON"
@@ -60,14 +63,15 @@ const Darsoon = () => {
 const Dbilia = () => (
   <Card
     logoSrc="/dbilia/logo.png"
+    darkLogoSrc="/dbilia/logo.png"
     color="c-violet11"
     bg="bg-violet4"
     title="DBILIA"
     href="/works/dbilia"
     subtitle={
       <>
-        Refactored &
-        <br /> and Redesigned
+        Refactored&nbsp;&
+        <br /> Redesigned
       </>
     }
     stack={
@@ -91,6 +95,7 @@ const Dbilia = () => (
 type CardProps = {
   title: string;
   logoSrc: string;
+  darkLogoSrc: string;
   href: string;
   subtitle: React.ReactNode;
   children: React.ReactNode;
@@ -103,6 +108,7 @@ const Momenta = () => {
   return (
     <Card
       logoSrc="/momenta/logo.png"
+      darkLogoSrc="/momenta/logo-dark.png"
       color="c-purple11"
       bg="bg-purple4"
       title="MOMENTA"
@@ -133,6 +139,7 @@ const Momenta = () => {
 
 const Card = ({
   logoSrc = "",
+  darkLogoSrc = "",
   title = "",
   subtitle = "",
   stack,
@@ -140,15 +147,17 @@ const Card = ({
   children = null,
   color = "c-violet11",
   bg = "bg-violet4",
-  btnColor="bg-violet6"
-}: CardProps) => {
+}: // btnColor="bg-violet6"
+CardProps) => {
+  const { resolvedTheme } = useColorScheme();
+
   return (
-    <article className={`rd-xl overflow-hidden min-h-180 p-10 flex flex-col gap-16  ${bg}`}>
+    <article className={`rd-6 overflow-hidden min-h-150 sm:min-h-180 p-6 sm:p-10 flex flex-col gap-16  ${bg}`}>
       <h3 className="display-contents">
         <div>
-          <img src={logoSrc} alt={title} className="h-6 w-auto" />
+          <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-5 w-auto lt-sm:mt-1" />
         </div>
-        <span className={`blcok H1   fw-900 text-6xl lh-1.15 ${color} `}>
+        <span className={`block H1   fw-900 text-4xl sm:text-6xl lh-1.25 ${color} `}>
           <span className="sr-only">{title} ,</span>
           {subtitle}
         </span>
@@ -158,12 +167,54 @@ const Card = ({
       </ul>
       {children}
       <div className="mt-auto flex justify-end ">
-        <Link href={href} className={`flex ac jc p6 rd-xl bg-grayA-3  ${color} `}>
-          <span className="i-ph-arrow-right inline-block text-4xl" />
+        <Link href={href} className={`flex ac jc p4 sm:p6 rd-xl bg-grayA-3  ${color} `}>
+          <span className="i-ph-arrow-right inline-block text-3xl sm:text-4xl" />
           <span className="sr-only"> Learn more</span>
         </Link>
       </div>
     </article>
+  );
+};
+
+const Sleeker = () => {
+  return (
+    <li>
+      <article className="rd-xl overflow-hidden bg-gray2">
+        <div className="aspect-4/3 bg-blue3"></div>
+        <div className="p-4">
+          <h2>Pivoting a failed idea!</h2>
+        </div>
+      </article>
+    </li>
+  );
+};
+
+const Teaching = () => {
+  return (
+    <li>
+      <article className="rd-xl overflow-hidden bg-gray2">
+        <div className="aspect-4/3 bg-blue3"></div>
+        <div className="p-4">
+          <h2>Teaching Experience: from zero coding experience to Full time Dev</h2>
+        </div>
+      </article>
+    </li>
+  );
+};
+
+const StackLogo = ({ icon = "", title = "", bgColor = "bg-grayA-7" }) => (
+  <li className={`w-[2.5em] h-[2.5em] rd-full flex jc ac ${bgColor} `}>
+    <span className={`inline-block ${icon}`}>
+      <span className="sr-only">{title}</span>
+    </span>
+  </li>
+);
+
+const MoreAboutMe = () => {
+  return (
+    <details className=" mt-6 space-y-6">
+      <summary className="w-fit p-2 b-gray5 text-tiny-note"> A little more about me</summary>
+    </details>
   );
 };
 
@@ -198,49 +249,5 @@ const CardOld = ({
         </div>
       </div>
     </article>
-  );
-};
-
-const Sleeker = () => {
-  return (
-    <li>
-      <article className="rd-xl overflow-hidden bg-gray2">
-        <div className="aspect-4/3 bg-blue3"></div>
-        <div className="p-4">
-          <h2>Pivoting a failed idea!</h2>
-        </div>
-      </article>
-    </li>
-  );
-};
-
-const Teaching = () => {
-  return (
-    <li>
-      <article className="rd-xl overflow-hidden bg-gray2">
-        <div className="aspect-4/3 bg-blue3"></div>
-        <div className="p-4">
-          <h2>Teaching Experience: from zero coding experience to Full time Dev</h2>
-        </div>
-      </article>
-    </li>
-  );
-};
-
-
-
-const StackLogo = ({ icon = "", title = "", bgColor = "bg-grayA-7" }) => (
-  <li className={`w-[2.5em] h-[2.5em] rd-full flex jc ac ${bgColor} `}>
-    <span className={`inline-block ${icon}`}>
-      <span className="sr-only">{title}</span>
-    </span>
-  </li>
-);
-
-const MoreAboutMe = () => {
-  return (
-    <details className=" mt-6 space-y-6">
-      <summary className="w-fit p-2 b-gray5 text-tiny-note"> A little more about me</summary>
-    </details>
   );
 };

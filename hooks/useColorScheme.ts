@@ -2,11 +2,12 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 const useColorScheme = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme , resolvedTheme } = useTheme();
   const [hasMountedInBrowser, setHasMountedInBrowser] = useState(false);
   useEffect(() => {
     setHasMountedInBrowser(true);
   }, []);
+
   const toggleTheme = () => {
     if (!hasMountedInBrowser) return;
     if (theme === "system") setTheme("light");
@@ -14,7 +15,7 @@ const useColorScheme = () => {
     if (theme === "dark") setTheme("system");
   };
 
-  return { theme: theme ?? "system", toggleTheme, setTheme, hasMountedInBrowser };
+  return { theme: theme ?? "system", resolvedTheme, toggleTheme, setTheme, hasMountedInBrowser };
 };
 
 export default useColorScheme;
