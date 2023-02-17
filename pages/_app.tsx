@@ -38,10 +38,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width" />
         <meta property="og:site_name" content="my-site0name" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex" />
+        <meta name="googlebot" content="noindex" />
       </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
-          <div className={`${inter.className}  h-full  `} style={{ gridTemplateRows: "auto 1fr auto" }}>
+          <div className={`${sora.className}  h-full text-lg fw-300 line-height-1.7 `} style={{ gridTemplateRows: "auto 1fr auto" }}>
             <header>
               <nav className=" py-3  flex justify-between max-w-page mx-auto sm:px-8grid px-4">
                 <Link href="/" className="bf-i-ph-house-simple fw-900" title="Home" />

@@ -165,7 +165,7 @@ CardProps) => {
       <ul aria-label="Stack Used" className="flex  gap-2">
         {stack}
       </ul>
-      {children}
+      <div className="text-lg leading-loose">{children}</div>
       <div className="mt-auto flex justify-end ">
         <Link href={href} className={`flex ac jc p4 sm:p6 rd-xl bg-grayA-3  ${color} `}>
           <span className="i-ph-arrow-right inline-block text-3xl sm:text-4xl" />
