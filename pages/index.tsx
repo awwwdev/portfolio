@@ -22,6 +22,9 @@ export default function Home() {
           <Momenta />
         </ul>
       </section>
+      {/* <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto ">
+        <Toolkit />
+      </section> */}
     </div>
   );
 }
@@ -51,8 +54,8 @@ const Darsoon = () => {
         }
       >
         <ul>
-          <li>A Brand new website created.</li>
-          <li>+80k rows from Google Sheet to Supabase migrated</li>
+          <li>A Brand new website was created.</li>
+          <li>+80k rows from Google Sheets to Supabase migrated</li>
           <li>+100 hours of weekly manual work automated</li>
         </ul>
       </Card>
@@ -70,24 +73,25 @@ const Dbilia = () => (
     href="/works/dbilia"
     subtitle={
       <>
-        Refactored&nbsp;&
-        <br /> Redesigned
+        Refactoring
+        <br /> the Unreadable
       </>
     }
     stack={
       <>
-        {/* <StackLogo icon="i-styles" title="Styled Components" /> */}
-        <li className="w-[2.5em] h-[2.5em] rd-full flex jc ac bg-grayA-7">
+        <li className="w-[2.5em] h-[2.5em] rd-full flex jc ac bg-grayA-3">
           <img src="/sc-logo2.png" alt="Styled Components" className="w-[1.2em] h-[1.2em] " />
         </li>
         <StackLogo icon="i-logos-sass" title="Sass and CSS" />
+        <StackLogo icon="i-logos-react" title="Sass and CSS" />
         <StackLogo icon="i-logos-figma" title="Figma" />
       </>
     }
   >
     <ul>
-      <li>Proposed a Re-design</li>
-      <li>Implemented based on the prior refactored UI</li>
+      <li>Refactored +1000 LoC files with composable components</li>
+      <li>Decoupled and improved new user onboarding tour</li>
+      <li>Redesigned the whole UI and added Dark Mode</li>
     </ul>
   </Card>
 );
@@ -115,9 +119,9 @@ const Momenta = () => {
       href="/works/momenta"
       subtitle={
         <>
-          Landing into
+          A One-way Flight &
           <br />
-          the web3 land
+          an Urgent Landing
         </>
       }
       stack={
@@ -130,8 +134,9 @@ const Momenta = () => {
       }
     >
       <ul>
-        <li>Delivered an highly creative landing page in 2 weeks</li>
-        <li>Not compromising accessability and not flashy animations</li>
+        <li>Ideated and created a low-fidelity prototype</li>
+        <li>Created complex and performant scroll animations</li>
+        <li>Delivered the whole project in 2 weeks</li>
       </ul>
     </Card>
   );
@@ -152,20 +157,18 @@ CardProps) => {
   const { resolvedTheme } = useColorScheme();
 
   return (
-    <article className={`rd-6 overflow-hidden min-h-150 sm:min-h-180 p-6 sm:p-10 flex flex-col gap-16  ${bg}`}>
-      <h3 className="display-contents">
-        <div>
-          <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-5 w-auto lt-sm:mt-1" />
-        </div>
-        <span className={`block H1   fw-900 text-4xl sm:text-6xl lh-1.25 ${color} `}>
-          <span className="sr-only">{title} ,</span>
-          {subtitle}
-        </span>
+    <article className={`rd-6 overflow-hidden min-h-150 sm:min-h-180 p-6 sm:p-10 flex flex-col ${bg}`}>
+      <div>
+        <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-5 w-auto lt-sm:mt-1" />
+      </div>
+      <h3 className={`mt-16 block H1 fw-900 text-4xl sm:text-6xl lh-1.25 ${color} `}>
+        <span className="sr-only leading-loose">{title} ,</span>
+        {subtitle}
       </h3>
-      <ul aria-label="Stack Used" className="flex  gap-2">
+      <ul aria-label="Stack Used" className="mt-8 flex  gap-2">
         {stack}
       </ul>
-      <div className="text-lg leading-loose">{children}</div>
+      <div className="mt-16 text-lg leading-loose c-grayA-11 ls-tighter ">{children}</div>
       <div className="mt-auto flex justify-end ">
         <Link href={href} className={`flex ac jc p4 sm:p6 rd-xl bg-grayA-3  ${color} `}>
           <span className="i-ph-arrow-right inline-block text-3xl sm:text-4xl" />
@@ -202,7 +205,7 @@ const Teaching = () => {
   );
 };
 
-const StackLogo = ({ icon = "", title = "", bgColor = "bg-grayA-7" }) => (
+const StackLogo = ({ icon = "", title = "", bgColor = "bg-grayA-3" }) => (
   <li className={`w-[2.5em] h-[2.5em] rd-full flex jc ac ${bgColor} `}>
     <span className={`inline-block ${icon}`}>
       <span className="sr-only">{title}</span>

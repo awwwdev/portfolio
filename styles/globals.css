@@ -8,13 +8,14 @@
 }
 
 .max-w-article {
-  max-width: min(90vw, 60ch);
+  max-width: min(90vw, 70ch);
 }
 .max-w-page {
   max-width: min(94vw, 50rem);
 }
 
-body {
+body,
+.font-family-inter {
   font-family: "Inter", "Roboto", system-ui, sans-serif;
 }
 

@@ -4,6 +4,8 @@ import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import NextImage from "next/image";
 import { GetStaticProps } from "next";
+import useColorScheme from "@/hooks/useColorScheme";
+import Link from "next/link";
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.url);
@@ -33,7 +35,7 @@ const PostLayout = ({ post }: { post: Post }) => {
       <article className=" py-8 article max-w-xl mx-auto sm:px-8 px-4">
         <div>
           <h1 className="H1">{post.title}</h1>
-          <time dateTime={post.date} className="text-xs text-gray-600 mb-1">
+          <time dateTime={post.date} className="text-xs c-gray11 mb-1">
             {format(parseISO(post.date), "LLLL d, yyyy")}
           </time>
         </div>
@@ -60,6 +62,78 @@ const PostLayout = ({ post }: { post: Post }) => {
           }}
         />
       </article>
+      <section className="mt-20 bg-pink2 py-32">
+        <div className="max-w-page mx-auto space-y-8">
+          <h2 className="H2 c-pink11">Other Works</h2>
+          <div className="flex flex-wrap gap-6 ">
+            <Card
+              logoSrc="/momenta/logo.png"
+              darkLogoSrc="/momenta/logo-dark.png"
+              color="c-purple11"
+              bg="bg-purple4"
+              title="MOMENTA"
+              href="/works/momenta"
+              subtitle={
+                <>
+                  A One-way Flight <br />& A Landing Page
+                </>
+              }
+              stack={
+                <>
+                  <StackLogo icon="i-logos-nextjs-icon" title="NEXTjs" />
+                  <StackLogo icon="i-logos-framer" title="Framer Motion" />
+                  <StackLogo icon="i-logos-figma" title="Figma" />
+                </>
+              }
+            ></Card>
+            <Card
+              logoSrc="/dbilia/logo.png"
+              darkLogoSrc="/dbilia/logo.png"
+              color="c-violet11"
+              bg="bg-violet4"
+              title="DBILIA"
+              href="/works/dbilia"
+              subtitle={
+                <>
+                  Refactoring
+                  <br /> The Unreadable
+                </>
+              }
+              stack={
+                <>
+                  <li className="w-[1.5em] h-[1.5em] rd-full flex jc ac bg-grayA-3">
+                    <img src="/sc-logo2.png" alt="Styled Components" className="w-[0.8em] h-[0.8em] " />
+                  </li>
+                  <StackLogo icon="i-logos-sass" title="Sass and CSS" />
+                  <StackLogo icon="i-logos-react" title="Sass and CSS" />
+                  <StackLogo icon="i-logos-figma" title="Figma" />
+                </>
+              }
+            ></Card>
+            <Card
+              logoSrc="/darsoon/logo.png"
+              darkLogoSrc="/darsoon/logo-dark.png"
+              color="c-orange-11"
+              bg="bg-orange4"
+              title="DARSOON"
+              href="/works/darsoon"
+              subtitle={
+                <>
+                  Restarting <br /> a Start-up
+                </>
+              }
+              stack={
+                <>
+                  <StackLogo icon="i-logos-nextjs-icon" title="NEXTjs" />
+                  <StackLogo icon="i-logos-supabase-icon" title="Supabase" />
+                  <StackLogo icon="i-logos-react-query-icon" title="React Query" />
+                  <StackLogo icon="i-logos-unocss" title="UnoCSS" />
+                </>
+              }
+            ></Card>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
@@ -72,16 +146,54 @@ export const MyButton = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-// const H1 = ({ children }) => <h1 className="H1">{children}</h1>;
-// const H2 = ({ children }: { children: React.ReactNode }) => <h2 className="H2">{children}</h2>;
-// const H3 = ({ children }: { children: React.ReactNode }) => <h3 className="H3">{children}</h3>;
-// const H4 = ({ children }: { children: React.ReactNode }) => <h4 className="H4">{children}</h4>;
-// const Code = ({ children }: { children: React.ReactNode }) => (
-//   <code className="bg-gray2 px-2 py-1 rd-md c-gray11">{children}</code>
-// );
+type CardProps = {
+  title: string;
+  logoSrc: string;
+  darkLogoSrc: string;
+  href: string;
+  subtitle: React.ReactNode;
+  children: React.ReactNode;
+  stack: React.ReactNode;
+  bg?: string;
+  color?: string;
+};
 
-// const Image = (props) => (
-//   <div className="relative overflow-hidden isolate">
-//     <NextImage fill={true} {...props} className="object-cover" />
-//   </div>
-// );
+const Card = ({
+  logoSrc = "",
+  darkLogoSrc = "",
+  title = "",
+  subtitle = "",
+  stack,
+  href,
+  children = null,
+  color = "c-violet11",
+  bg = "bg-violet4",
+}: // btnColor="bg-violet6"
+CardProps) => {
+  const { resolvedTheme } = useColorScheme();
+
+  return (
+    <Link href={href} className={`block  `}>
+      <article className={`rd-6 overflow-hidden min-h-80  p-8 flex flex-col ${bg}`}>
+        <div>
+          <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-4 w-auto lt-sm:mt-1" />
+        </div>
+        <h3 className={`mt-4 block H3 text-3xl fw-900 ${color} `}>
+          <span className="sr-only">{title} ,</span>
+          {subtitle}
+        </h3>
+        <ul aria-label="Stack Used" className="mt-auto flex  gap-2">
+          {stack}
+        </ul>
+      </article>
+    </Link>
+  );
+};
+
+const StackLogo = ({ icon = "", title = "", bgColor = "bg-grayA-3" }) => (
+  <li className={`w-[1.5em] h-[1.5em] rd-full flex jc ac ${bgColor} `}>
+    <span className={`inline-block ${icon} text-2xs`}>
+      <span className="sr-only">{title}</span>
+    </span>
+  </li>
+);

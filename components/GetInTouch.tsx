@@ -1,21 +1,33 @@
+import useColorScheme from "@/hooks/useColorScheme";
+
 const GetInTouch = () => {
+  const { resolvedTheme } = useColorScheme();
+  console.log("🚀 ~ resolvedTheme:", resolvedTheme);
+
   return (
     <>
-      <div className=" max-w-page mx-auto sm:px-8 px-4  ">
+      <div className=" max-w-page mx-auto sm:px-8 px-4 space-y-8  ">
         <h2 className="H1  5">Let&apos;s get in touch</h2>
 
-        <div className="flex gap-2 ">
-          <a href="mailto:hamidpm@pm.me" className="btn-prm !mt-20  py-2 rd-3 ">
-            {/* <img src="/3d-icons/envelop.png" alt="Envelop" className="w-10 flex ac jc scale-150 rotate-20 " /> */}
-            <span className="px-8 py-2 text-xl fw-900  bf-i-ph-envelope-simple-bold">Email Me</span>
-          </a>
-          {/* <img
-            src="/3d-icons/pointing-hand.png"
-            alt="Envelop"
-            className="w-10 min-w-10 flex gap-2 ac jc "
-            style={{ transform: "scale(1 , 1 )" }}
-          /> */}
-        </div>
+        <p className="c-gray11">Feel free to contact me. I try to reach back to you soon.</p>
+        <ul className="flex flex-wrap gap-12 ac ">
+          <li>
+            <a
+              href="mailto:hamidpm@pm.me"
+              className="btn-prm fw-700 py-4  px-12 rd-4 flex ac  !mt-20  bf-i-ph-envelope-simple-bold before:opacity-100"
+            >
+              Email Me
+            </a>
+          </li>
+          <li>
+            <a
+              href="https/github.com/vashmeen"
+              className="c-gray11 !mt-20  flex ac  bf-i-logos-github-icon before:opacity-100 @dark:before:filter-invert-100    "
+            >
+              My GitHub
+            </a>
+          </li>
+        </ul>
       </div>
     </>
   );

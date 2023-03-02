@@ -11,12 +11,12 @@ import ThemeToggler from "@/components/ThemeToggler";
 
 import Head from "next/head";
 import Link from "next/link";
-import { Sora, Inter } from "@next/font/google";
+// import { Sora, Inter } from "@next/font/google";
 import About from "@/components/About";
 import GetInTouch from "@/components/GetInTouch";
 
-const sora = Sora({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
+// const sora = Sora({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient({
@@ -43,10 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
-          <div
-            className={`${sora.className}  h-full text-lg fw-300 line-height-1.7 `}
-            style={{ gridTemplateRows: "auto 1fr auto" }}
-          >
+          <div className=" h-full text-lg fw-300 line-height-1.7" style={{ gridTemplateRows: "auto 1fr auto" }}>
             <header>
               <nav className=" py-3  flex justify-between max-w-page mx-auto sm:px-8grid px-4">
                 <Link href="/" className="bf-i-ph-house-simple fw-900" title="Home" />
@@ -74,10 +71,9 @@ export default function App({ Component, pageProps }: AppProps) {
                   <Link href="/#About Me">About Me</Link>
                   <Link href="/#Contact">Contact</Link>
                 </nav>
-                <div className="flex  ac">
-                  <p className="text-note c-gray9 text-2xs">
-                    Built from fresh Open Source ingredients, of course by myself :|
-                  </p>
+                <div className="">
+                  <p className="text-note c-gray9 text-2xs">From fresh Open Source ingredients.</p>
+                  <p className="text-note c-gray9 text-2xs">Built by love, of course by myself.</p>
                 </div>
               </div>
             </footer>
