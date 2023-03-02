@@ -152,7 +152,7 @@ type CardProps = {
   darkLogoSrc: string;
   href: string;
   subtitle: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   stack: React.ReactNode;
   bg?: string;
   color?: string;
