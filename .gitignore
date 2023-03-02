@@ -31,9 +31,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# Uno CSS auto genreated CSS (This file will be automatically generated on running build or dev)
-styles/uno.css
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts

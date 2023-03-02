@@ -1,0 +1,26 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🏗️👷 Running Pre Commit Tests'
+
+pnpm  check-format ||
+(
+    echo '⛔🤢🤮 Bad Formatting. Run pnpm format then commit'
+    false;
+)
+
+pnpm  check-lint ||
+(
+        echo '⛔🏀👋😬 ESLint Check Failed!'
+        false; 
+)
+
+echo '✅ Linting passed successfully.'
+
+pnpm check-types ||
+(
+    echo '⛔😱🥴 Failed Type check.'
+    false;
+)
+
+echo '✅ Type Chceking passed successfully.'
