@@ -1,6 +1,7 @@
-import type { Rule, UserShortcuts } from "@unocss/core";
+import type { DynamicRule, DynamicShortcut, Rule, StaticShortcutMap, UserShortcuts } from "@unocss/core";
 
-export const rules: Rule[] = [
+import type { Theme } from "@unocss/preset-uno";
+const staticRules: Rule<Theme>[] = [
   // font size utility classes without affecting line height
   ["fs-2xs", { "font-size": "0.6rem" }],
   ["fs-xs", { "font-size": "0.75rem" }],
@@ -46,6 +47,8 @@ export const rules: Rule[] = [
   ["text-2xs", { "font-size": "0.6rem", "line-height": "1.25rem" }],
   ["max-w-article", { "max-width": " min(94vw, 50rem)" }],
   ["max-w-page", { "max-width": " min(94vw, 50rem)" }],
+];
+const dynamicRules: DynamicRule<Theme>[] = [
   [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
   [
     /^grid-min-col-(.*)$/,
@@ -95,7 +98,7 @@ export const rules: Rule[] = [
     },
   ],
 ];
-export const shortcuts: UserShortcuts = [
+const staticShortcuts: StaticShortcutMap[] = [
   {
     "iso-rel": "relative isolate",
     field: "px-2 py-1 rd b-0 bg-gray3",
@@ -152,6 +155,8 @@ export const shortcuts: UserShortcuts = [
     "table-footer-cell":
       "b-gray5 px-2 py-1 pb-3 first-of-type:(pis-4 rd-bl-xl)  last-of-type:(pie-4  last-of-type:rd-br-xl) b-e-1 ",
   },
+];
+const dynamicShortcuts: DynamicShortcut<Theme>[] = [
   [
     /^bf-i-(.*)$/,
     ([, iconName]) =>
@@ -165,3 +170,6 @@ export const shortcuts: UserShortcuts = [
   [/^ol-(.*)$/, ([, val]) => `outline-${val}`],
   [/^ol-(.*)$/, ([, val]: string[]) => `outline-${val}`],
 ];
+
+export const rules: Rule<Theme>[] = [...staticRules, ...dynamicRules];
+export const shortcuts: UserShortcuts<Theme> = [...staticShortcuts, ...dynamicShortcuts];
