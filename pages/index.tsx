@@ -4,6 +4,7 @@ import About from "@/components/About";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import useColorScheme from "@/hooks/useColorScheme";
+import Toolkit from '@/components/Toolkit';
 
 export default function Home() {
   return (
@@ -22,9 +23,9 @@ export default function Home() {
           <Momenta />
         </ul>
       </section>
-      {/* <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto ">
+      <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto ">
         <Toolkit />
-      </section> */}
+      </section>
     </div>
   );
 }
