@@ -2,9 +2,9 @@ import type { AppProps } from "next/app";
 import "@unocss/reset/sanitize/sanitize.css";
 import "@unocss/reset/tailwind.css";
 import "@/styles/reset.css";
-import "uno.css";
+// import "uno.css";
 import "@/styles/globals.css";
-
+import "../styles/uno.css";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ThemeProvider } from "next-themes";
 import ThemeToggler from "@/components/ThemeToggler";
@@ -44,8 +44,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
           <div className=" h-full text-lg fw-300 line-height-1.7" style={{ gridTemplateRows: "auto 1fr auto" }}>
-            <header>
-              <nav className=" py-3  flex justify-between max-w-page mx-auto sm:px-8grid px-4">
+            <header className="">
+              <nav className=" py-3  flex justify-between max-w-page mx-auto sm:px-8 grid px-4">
                 <Link href="/" className="bf-i-ph-house-simple fw-900" title="Home" />
                 <ThemeToggler className="" />
               </nav>

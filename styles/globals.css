@@ -1,18 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --header-height: 2.5em;
   scroll-behavior: smooth;
 }
 
-.max-w-article {
-  max-width: min(90vw, 70ch);
-}
-.max-w-page {
+/* .max-w-article {
   max-width: min(94vw, 50rem);
-}
+} */
+/* .max-w-page {
+  max-width: min(94vw, 50rem);
+} */
 
 body,
 .font-family-inter {

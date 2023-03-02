@@ -4,10 +4,14 @@ import About from "@/components/About";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import useColorScheme from "@/hooks/useColorScheme";
+import Toolkit from "@/components/Toolkit";
 
 export default function Home() {
   return (
     <div className=" ">
+      <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto space-y-12 ">
+        <Toolkit />
+      </section>
       <section aria-label="introduction" className=" rd-xl py-8 min-h-80 max-w-page  mx-auto sm:px-8  px-4">
         <Intro />
       </section>
@@ -22,9 +26,6 @@ export default function Home() {
           <Momenta />
         </ul>
       </section>
-      {/* <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto ">
-        <Toolkit />
-      </section> */}
     </div>
   );
 }
@@ -238,10 +239,10 @@ const CardOld = ({
           <p className={`H2 mt-4 fw-400 ${color} `}>{subtitle}</p>
         </div>
         <div
-          className={`rd-xl overflow-hidden ${bg} min-h-100 p-10 pbs-30 flex flex-col g-col-[1/-1] g-row-[overlap/card] sm:(min-h-80 g-row-[1/-1] g-col-[overlap/card] pis-40 pbs-10 )  `}
+          className={`rd-xl overflow-hidden ${bg} min-h-100 p-10 pbs-30 flex flex-col g-col-[1/-1] g-row-[overlap/card] sm:min-h-80 sm:g-row-[1/-1] sm:g-col-[overlap/card] sm:pis-40 sm:pbs-10  `}
         >
           {children}
-          <div className="mt-auto flex flex-col gap-8 sm:(flex-row justify-between ac)">
+          <div className="mt-auto flex flex-col gap-8 sm:flex-row sm:justify-between sm:ac">
             <ul aria-label="Stack Used" className="flex  gap-2">
               {stack}
             </ul>

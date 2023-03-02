@@ -44,8 +44,8 @@ export const rules: Rule[] = [
   ["rel", { position: "relative" }],
   ["abs", { position: "absolute" }],
   ["text-2xs", { "font-size": "0.6rem", "line-height": "1.25rem" }],
-  ["max-w-article", { "max-width": "60ch" }],
-  ["max-w-page", { "max-width": "100rem" }],
+  ["max-w-article", { "max-width": " min(94vw, 50rem)" }],
+  ["max-w-page", { "max-width": " min(94vw, 50rem)" }],
   [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
   [
     /^grid-min-col-(.*)$/,
