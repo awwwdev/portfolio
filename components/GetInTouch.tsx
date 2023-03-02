@@ -2,7 +2,6 @@ import useColorScheme from "@/hooks/useColorScheme";
 
 const GetInTouch = () => {
   const { resolvedTheme } = useColorScheme();
-  console.log("🚀 ~ resolvedTheme:", resolvedTheme);
 
   return (
     <>
@@ -25,6 +24,14 @@ const GetInTouch = () => {
               className="c-gray11 !mt-20  flex ac  bf-i-logos-github-icon before:opacity-100 @dark:before:filter-invert-100    "
             >
               My GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://dribbble.com/hamidkdesign"
+              className="c-gray11 !mt-20  flex ac  bf-i-logos-dribbble-icon before:opacity-100    "
+            >
+              My Dribble
             </a>
           </li>
         </ul>

@@ -11,8 +11,9 @@ const About = () => {
         </p> */}
         <p>Hi again! Thank you for reading this far!</p>
         <p>
-          {`I'm`} Hamid. I design and develop web apps. I was a designer for 5 years and during the pandemic, I went to
-          Concordia Bootcamp. Now, {`I'm`} a Web Developer and a Desinger.
+          {`I'm`} Hamid. I design and develop web apps. I was a designer for 5 years. you can check some of my design
+          works in <a href="https://dribbble.com/hamidkdesign"> my dribble</a>. During the pandemic, I went to{" "}
+          <a href="https://concordiabootcamps.ca/">Concordia Bootcamps.</a> Now, {`I'm`} a Web Developer and a Designer.
         </p>
         <p>
           Currently, I am obsessed with Design Systems and bridging the gap between Design and Development. I am
