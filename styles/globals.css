@@ -11,7 +11,7 @@
   max-width: min(90vw, 70ch);
 }
 .max-w-page {
-  max-width: min(94vw, 50rem);
+  max-width: min(100vw - 32px, 50rem);
 }
 
 body,
@@ -131,4 +131,33 @@ a {
 
 .article > * + * {
   margin-block-start: 1.5em;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+::selection {
+  background: rgb(255, 191, 179);
+}
+
+.dark ::selection {
+  background: rgb(255, 143, 121);
+}
+
+.toolkit__grid {
+  display: grid;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 3.75rem), 1fr));
+  grid-auto-flow: dense;
+}
+
+.toolkit__grid-item {
+  min-height: 3.75rem;
 }
