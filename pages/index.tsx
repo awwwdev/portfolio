@@ -5,26 +5,28 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import useColorScheme from "@/hooks/useColorScheme";
 import Toolkit from '@/components/Toolkit';
+import Emoji from '@/components/Emoji';
 
 export default function Home() {
   return (
     <div className=" ">
+      <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto ">
+        <Toolkit />
+      </section>
+
       <section aria-label="introduction" className=" rd-xl py-8 min-h-80 max-w-page  mx-auto sm:px-8  px-4">
         <Intro />
       </section>
       <section aria-label="Works" id="works" className="mt-50 rd-xl max-w-page  mx-auto ">
         <div className="flex gap-1 items-baseline sm:px-8  px-4">
           <h2 className="H1">Works</h2>
-          <img src="/3d-icons/fire.png" alt="fire" className="w-15 translate-y-2" />
+          <Emoji name="fire" />
         </div>
         <ul className="mt-20 space-y-12 sm:space-y-32">
           <Darsoon />
           <Dbilia />
           <Momenta />
         </ul>
-      </section>
-      <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto ">
-        <Toolkit />
       </section>
     </div>
   );

@@ -1,9 +1,11 @@
+import Emoji from "@/components/Emoji";
+
 const About = () => {
   return (
     <>
       <div className="flex gap-1 items-baseline mb-20">
         <h2 className="H1">About Me</h2>
-        <img src="/3d-icons/dino.png" alt="dinosaur" className="w-15 translate-y-2" />
+        <Emoji name="dino" />
       </div>
       <div className=" space-y-4 c-gray11">
         {/* <p className="">

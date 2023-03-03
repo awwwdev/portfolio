@@ -1,3 +1,5 @@
+import Emoji from "@/components/Emoji";
+
 const Intro = () => {
   return (
     <>
@@ -5,7 +7,7 @@ const Intro = () => {
         <h1 className="">
           <div className="flex gap-1 items-baseline">
             <span className="H1 fw-900">Hello! </span>
-            <img src="/3d-icons/waving-hand.png" alt="waving-hand" className=" w-15" aria-hidden="true" />
+            <Emoji name="waving-hand" />
           </div>
           <span className="block mt-10 max-w-100  ls-tighter font-family-inter c-gray11">I am Hamid.</span>
         </h1>

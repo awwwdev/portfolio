@@ -14,6 +14,7 @@ import Link from "next/link";
 // import { Sora, Inter } from "@next/font/google";
 import About from "@/components/About";
 import GetInTouch from "@/components/GetInTouch";
+import Toolkit from "@/components/Toolkit";
 
 // const sora = Sora({ subsets: ["latin"] });
 // const inter = Inter({ subsets: ["latin"] });
@@ -44,6 +45,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
           <div className=" h-full text-lg fw-300 line-height-1.7" style={{ gridTemplateRows: "auto 1fr auto" }}>
+            <div className="max-w-page mx-auto">
+              <Toolkit />
+            </div>
+
             <header>
               <nav className=" py-3  flex justify-between max-w-page mx-auto sm:px-8grid px-4">
                 <Link href="/" className="bf-i-ph-house-simple fw-900" title="Home" />
