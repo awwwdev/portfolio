@@ -4,22 +4,32 @@ import Icon from "@/components/Icon";
 const Toolkit = ({ ...props }: AnyProps) => {
   return (
     <>
-      <div className="flex gap-1 items-baseline sm:px-8  px-4">
+      {/* <div className="flex gap-1 items-baseline sm:px-8  px-4">
         <h2 className="H1">Toolkit</h2>
         <Emoji name="rainbow" className="scale-x--100" />
-      </div>
+      </div> */}
       <div className="mt-20 toolkit__grid">
         {/* <h3 className="H3">For Development</h3> */}
         <ul className="display-contents">
-          <Li className="col-span-3 row-span-3 bg-gray-200" icon="i-logos-nextjs" size="!w-6em !h-2em" alt="NEXTjs" />
+          <Li
+            className="col-span-3 row-span-3 bg-gradient-to-r from-gray-100 to-gray-200"
+            icon="i-logos-nextjs"
+            size="!w-6em !h-2em"
+            alt="NEXTjs"
+          />
           {/* <Li className="col-span-1 row-span-1 bg-cyan-100" icon="i-logos-react" size="!w-2em !h-2em" alt="React" /> */}
           <Li
             className="col-span-2 row-span-1 bg-sky3 @dark:bg-sky-4 "
             src="/tool-logos/react.svg"
-            size="p-2"
+            size="p-2  c-#0063AA  @dark:c-#6DC2FF"
             alt="React"
           />
-          <Li className="col-span-3 row-span-2 bg-white" src="/tool-logos/supabase.svg" size="p-2" alt="Supabase" />
+          <Li
+            className="col-span-3 row-span-2 light bg-olive3"
+            src="/tool-logos/supabase.svg"
+            size="p-2"
+            alt="Supabase"
+          />
           <Li className="col-span-2 row-span-2 bg-stone-800" icon="i-logos-figma" size="!w-2em !h-2em" alt="Figma" />
 
           <Li
@@ -29,7 +39,7 @@ const Toolkit = ({ ...props }: AnyProps) => {
             size="p-1"
           />
           <Li
-            className="col-span-1 row-span-1 bg-yellow-700"
+            className="col-span-1 row-span-1 bg-yellow-400  @dark:bg-yellow-700"
             src="/tool-logos/javascript.svg"
             alt="JavaScript"
             size="p-1"
@@ -40,17 +50,22 @@ const Toolkit = ({ ...props }: AnyProps) => {
             size="p-2 filter-invert"
             alt="Radix-UI"
           />
-          <Li className="col-span-2 row-span-1 p-2 " src="/tool-logos/unocss.svg" alt="UnoCSS" />
-          <Li className="col-span-2 row-span-3 bg-blue-200" src="/tool-logos/css.svg" alt="CSS" size="" />
-          <Li className="col-span-3 row-span-1 bg-teal-100" src="/tool-logos/tailwindcss.svg" alt="TailwindCSS" />
-          <Li className="col-span-1 row-span-1 bg-orange6" src="/tool-logos/html.svg" size="p-1" alt="HTML" />
           <Li
-            className="col-span-3 row-span-1 bg-red-50"
-            icon="i-logos-react-query"
-            size="!w-5em !h-1em"
-            alt="React-Query"
+            className="col-span-1 row-span-1 bg-violet4 "
+            src="/tool-logos/pwa.svg"
+            alt="Progressive Web Applications"
           />
-          <Li className="col-span-2 row-span-1 bg-red-50" src="/tool-logos/react-table.svg" alt="React Table" />
+          <Li className="col-span-2 row-span-1 p-2 bg-slate-100 " src="/tool-logos/unocss.svg" alt="UnoCSS" />
+          <Li className="col-span-2 row-span-3 bg-blue-200" src="/tool-logos/css.svg" alt="CSS" size="" />
+          <Li
+            className="col-span-3 row-span-1 bg-gradient-to-r from-teal-50 to-teal-100"
+            src="/tool-logos/tailwindcss.svg"
+            alt="TailwindCSS"
+            size="px-4"
+          />
+          <Li className="col-span-1 row-span-1 bg-orange6" src="/tool-logos/html.svg" size="p-1" alt="HTML" />
+          <Li className="col-span-2 row-span-1 bg-slate-100" src="/tool-logos/react-query.svg" alt="React-Query" />
+          {/* <Li className="col-span-2 row-span-1 bg-red-50" src="/tool-logos/react-table.svg" alt="React Table" /> */}
           <Li className=" bg-indigo-900" src="/tool-logos/zod.svg" size="p-1" alt="Zod validator" />
           <Li
             className="col-span-1 row-span-1 bg-blue-800"
@@ -60,7 +75,7 @@ const Toolkit = ({ ...props }: AnyProps) => {
         </ul>
         {/* <h3>My Future Stack</h3> */}
         <ul className="display-contents">
-          <Li className="col-span-2 row-span-2 bg-slate-200" src="/tool-logos/solidjs.svg" size="p-2" alt="Solidjs" />
+          <Li className="col-span-2 row-span-1 bg-slate-200" src="/tool-logos/solidjs.svg" size="p-2" alt="Solidjs" />
           <Li icon="i-logos-strapi bg-violet12" src="/tool-logos/strapi.svg" alt="Strapi" />
           <Li className="bg-pink-200" icon="i-logos-deno" size="!w-2em !h-2em" alt="Deno" />
           <Li className="bg-white" icon="i-logos-nodejs" size="!w-2em !h-2em" alt="nodejs" />
