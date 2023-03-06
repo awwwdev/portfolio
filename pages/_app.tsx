@@ -34,10 +34,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta property="og:title" content="" />
-        <meta property="og:description" content="About my website in one sentence" />
+        <meta property="og:description" content="Web Development and Design Portfolio" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <meta property="og:site_name" content="my-site0name" />
+        <meta property="og:site_name" content="Hamid's Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex" />
         <meta name="googlebot" content="noindex" />
@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <ThemeToggler className="" />
               </nav>
             </header>
-            <main>
+            <main id="main-content">
               <Component {...pageProps} />
               <section
                 aria-label="About me"
@@ -68,7 +68,6 @@ export default function App({ Component, pageProps }: AppProps) {
               <div className="mx-auto max-w-page sm:px-8 px-4   pb-3 ">
                 <nav className="flex ac  py-4 gap-4 c-gray9 text-note b-t-1 b-gray5">
                   <Link href="/#works">Works</Link>
-                  <Link href="/#blog">Blog</Link>
                   <Link href="/#About Me">About Me</Link>
                   <Link href="/#Contact">Contact</Link>
                 </nav>
