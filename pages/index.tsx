@@ -10,10 +10,6 @@ import Emoji from '@/components/Emoji';
 export default function Home() {
   return (
     <div className=" ">
-      <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto ">
-        <Toolkit />
-      </section>
-
       <section aria-label="introduction" className=" rd-xl py-8 min-h-80 max-w-page  mx-auto sm:px-8  px-4">
         <Intro />
       </section>
@@ -27,6 +23,9 @@ export default function Home() {
           <Dbilia />
           <Momenta />
         </ul>
+      </section>
+      <section aria-label="Toolkit" id="toolkit" className="mt-50 rd-xl max-w-page  mx-auto ">
+        <Toolkit />
       </section>
     </div>
   );
@@ -164,7 +163,7 @@ CardProps) => {
       <div>
         <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-5 w-auto lt-sm:mt-1" />
       </div>
-      <h3 className={`mt-16 block H1 fw-900 text-4xl sm:text-6xl lh-1.25 ${color} `}>
+      <h3 className={`mt-16 block H1 fw-900 text-4xl sm:text-6xl leading-1.5 ${color} `}>
         <span className="sr-only leading-loose">{title} ,</span>
         {subtitle}
       </h3>
