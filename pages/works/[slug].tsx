@@ -75,7 +75,7 @@ const PostLayout = ({ post }: { post: Post }) => {
               href="/works/momenta"
               subtitle={
                 <>
-                  A One-way Flight <br />& A Landing Page
+                  Two Crazy Landings
                 </>
               }
               stack={

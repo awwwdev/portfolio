@@ -121,9 +121,7 @@ const Momenta = () => {
       href="/works/momenta"
       subtitle={
         <>
-          A One-way Flight &
-          <br />
-          an Urgent Landing
+          Two Crazy<br /> Landings
         </>
       }
       stack={
