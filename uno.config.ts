@@ -14,8 +14,7 @@ export default defineConfig<Theme>({
   theme: lightTheme,
   presets: [
     presetUno({
-      dark: "class",
-      
+      dark: { light: ".light", dark: ".dark" },
     }),
     presetIcons({
       scale: 1.2,
@@ -28,6 +27,7 @@ export default defineConfig<Theme>({
       },
       prefix: "--rdx",
       theme: {
+        light: lightTheme,
         dark: darkTheme,
       },
     }),
