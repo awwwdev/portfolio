@@ -161,7 +161,7 @@ CardProps) => {
       <div>
         <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-5 w-auto lt-sm:mt-1" />
       </div>
-      <h3 className={`mt-16 block H1 fw-900 text-4xl sm:text-6xl leading-1.5 ${color} `}>
+      <h3 className={`mt-16 block  fw-900 text-4xl sm:text-6xl ${color} `}>
         <span className="sr-only leading-loose">{title} ,</span>
         {subtitle}
       </h3>
