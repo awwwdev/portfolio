@@ -14,7 +14,14 @@ The project was just approved as an MVP when I joined the team. The MVP code was
 
 ## Refactoring
 
-My task was to find any bug or inconsistency in the UI and fix it. I found many bugs listed in the Trello board and started tackling them individually. But after a while, I found tracking down a simple bug could take a day. So I started refactoring.
+My task was to find any bug or inconsistency in the UI and fix it. I found many bugs listed in the Trello board and started tackling them individually.
+
+<figure>
+  <video src="/dbilia/trello-bugs.mp4" autoplay="" playsinline="" muted="" />
+  <figcaption classNames="text-sm text-center c-gray11">The bugs I listed in a Trello board</figcaption>
+</figure>
+
+After a while, tracking down a simple bug could take a day. So I started refactoring.
 
 My process was like the one below. It was sometimes in a different order, though.
 
@@ -23,7 +30,7 @@ My process was like the one below. It was sometimes in a different order, though
 - Remove all the inline styles and move them to Sass files.
 - Remove any JavaScript code that CSS can handle, such as media query hooks, and write the CSS for it.
 - CSS Grid was overused in the project in places where flexbox where more appropriate. So I replaced them with flexbox, which was three times less code!
-- I replaced Sass Variables with CSS Variables because I could use them in run time, and creating a dark mode was much easier.
+- I replaced Sass Variables with CSS Variables because I could use them in run time, and creating a dark mode was much more manageable.
 - I used React-joy-ride to create the tour for the new users. So many coupled lines of code were removed.
 - I used Formik helper components to make forms more concise.
 
@@ -42,15 +49,16 @@ I kept them for a while but gradually replaced them with my own components.
 
 3. Then removed all the `width > 640 && <>...</>` and `width = useWidth()` stuff, and handled the responsiveness with CSS.
 
-4. Thing was still very messy. Mostly because of the onboarding tour. The logic for the tour. Unreadblele codes like `onClick={() => if(!tour|| createTour.step !== 5) handleCreateNFT}` where everywhere. So, I needed to decouple that. I used React-joy-ride. It removed many lines of code. I just needed to add ids or special classNames to different sections of the page, and in a separate file, I defined the steps and messages of each step.
+4. Thing was still very messy. Mostly because of the onboarding tour. The logic for the tour. Unreadblele codes like `onClick={() => if(!tour|| createTour.step !== 5) handleCreateNFT}` where everywhere. So, I needed to decouple that. I used React-joy-ride. It removed many lines of code. I just needed to add ids or special class names to different sections of the page, and in a separate file, I defined the steps and messages of each step.
 
 5. Finally, I created some custom `<Input />` components to encapsulate the validation, error messages, and reuse styles.
 
 The +2000 lines file was now 500 lines of code and workable and scalable.
 
-## De-coupling new user tours
+## Decoupling new user tours
 
-...
+I used the JoyRide package to decouple the new user tour from the main code. It allowed me to define the tour steps in a JSON format and bind it to different elements in the page using some custom CSS class names or Ids.
+We had three different onboarding tours. One of them would run across pages. So, it starts on one page and ends and another page. That didn't work well with the library. So I used the tour in controlled mode, with a Context Provider and useEffects. Later we leveraged the context to add a "reset tours" option in the user's preferences.
 
 ## Redesigning
 
@@ -62,7 +70,7 @@ I suggested redesigning the app instead of doing band-aid design fixes. I had to
 
 After the design was finished, I started to implement it. And it didn't take long.
 
-The thign I changed was:
+The things I changed were:
 valeus of CSS Variables
 
 styles in the components
@@ -75,3 +83,6 @@ Later I added more complex responsiveness. While the tour is still working witho
 <video alt="Responsiveness" src="/dbilia/responsive.mp4" controls muted controlList="nodownload nofullscreen"></video>
 
 ## Concolusion
+
+This experience proved how refactoring could prepare the basis for agile development. Of course, refactoring takes some time, and it does not have a tangible outcome for users or your supervisor. But the real reward comes afterward when you can quickly add or change features quickly and without tears.
+Besides, this process strengthened my understanding of how React works under the hood, which came in handy in many projects later.

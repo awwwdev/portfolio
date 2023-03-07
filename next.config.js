@@ -28,7 +28,7 @@ const nextConfig = withContentlayer({
     }
     return config;
   },
-  // pageExtensions: ["tsx", "md", "rtl.md", "rtl.mdx", "js", "jsx", "mdx"],
+  pageExtensions: ["tsx", "md", "rtl.md", "rtl.mdx", "js", "jsx", "mdx"],
 });
 
 module.exports = nextConfig;
