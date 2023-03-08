@@ -75,11 +75,12 @@ export default function App({ Component, pageProps }: AppProps) {
                   <Link href="/#Contact">Contact</Link>
                 </nav>
                 <div className="">
-                  <p className="text-note c-gray9 text-2xs">From fresh Open Source ingredients.</p>
+                  <p className="text-note c-gray9 text-2xs">Built by love</p>
                   <p className="text-note c-gray9 text-2xs">
-                    Powered by WebFlo... Kidding!
+                    Powered by WebFlo... Kidding! Here is
+                    {"  "}
                     <a href="https://github.com/vashmeen/portfolio" target="_blank" rel="noreferrer">
-                      Here is the source code!
+                      the source code!
                     </a>
                   </p>
                 </div>

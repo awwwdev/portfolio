@@ -14,11 +14,9 @@ const Toolkit = ({ ...props }: AnyProps) => {
         <ul className="display-contents">
           <Li
             className="col-span-3 row-span-3 bg-gradient-to-r from-gray-100 to-gray-200"
-            icon="i-logos-nextjs"
-            size="!w-6em !h-2em"
+            src="/tools-logos/nextjs.svg"
             alt="NEXTjs"
           />
-          {/* <Li className=" bg-cyan-100" icon="i-logos-react" size="!w-2em !h-2em" alt="React" /> */}
           <Li className="sm:col-span-2  bg-sky3 light " src="/tool-logos/react.svg" alt="React" />
           <Li
             className="col-span-3 row-span-2 light bg-olive3"
@@ -42,12 +40,22 @@ const Toolkit = ({ ...props }: AnyProps) => {
             alt="Radix-UI"
           />
 
-          <Li className="col-span-3 row-span-2  sm:row-span-3 dark bg-gray5" src="/tool-logos/figma.svg" alt="Figma" size="" />
+          <Li
+            className="col-span-3 row-span-2  sm:row-span-3 dark bg-gray5"
+            src="/tool-logos/figma.svg"
+            alt="Figma"
+            size=""
+          />
 
           <Li className="  bg-gradient-to-b from-blue-200 to-blue-50" src="/tool-logos/css.svg" alt="CSS" />
           <Li className="bg-violet-100" src="/tool-logos/framer-motion.png" size="w-9/10" alt="Framer Motion" />
           <Li className="col-span-2   bg-stone-100 " src="/tool-logos/unocss.svg" alt="UnoCSS" size="w-9/10" />
-          <Li className="bg-violet-100 col-span-2 sm:col-span-1 sm:row-span-2 row-span-3" src="/tool-logos/astrojs.svg" alt="Astro" size="w-5/10" />
+          <Li
+            className="bg-violet-100 col-span-2 sm:col-span-1 sm:row-span-2 row-span-3"
+            src="/tool-logos/astrojs.svg"
+            alt="Astro"
+            size="w-5/10"
+          />
           <Li
             className="col-span-2   bg-gradient-to-r from-sky-100 to-teal-100"
             src="/tool-logos/tailwindcss.svg"
