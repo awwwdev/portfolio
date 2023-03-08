@@ -76,7 +76,12 @@ export default function App({ Component, pageProps }: AppProps) {
                 </nav>
                 <div className="">
                   <p className="text-note c-gray9 text-2xs">From fresh Open Source ingredients.</p>
-                  <p className="text-note c-gray9 text-2xs">Built by love, of course by myself.</p>
+                  <p className="text-note c-gray9 text-2xs">
+                    Powered by WebFlo... Kidding!
+                    <a href="https://github.com/vashmeen/portfolio" target="_blank" rel="noreferrer">
+                      Here is the source code!
+                    </a>
+                  </p>
                 </div>
               </div>
             </footer>
