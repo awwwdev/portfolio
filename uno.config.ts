@@ -9,7 +9,7 @@ import { rules, shortcuts } from "./uno-rules";
 import { darkTheme, lightTheme } from "./uno-radix-colors";
 export default defineConfig<Theme>({
   include: [/\.(vue|svelte|[jt]sx?|mdx?|html)($|\?)/],
-rules,  1
+  rules,
   shortcuts,
   transformers: [transformerVariantGroup()],
   theme: lightTheme,
