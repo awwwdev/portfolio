@@ -16,6 +16,7 @@ const Toolkit = ({ ...props }: AnyProps) => {
             className="col-span-3 row-span-3 bg-gradient-to-r from-gray-100 to-gray-200"
             src="/tool-logos/nextjs.svg"
             alt="NEXTjs"
+          size="w-5/10"
           />
           <Li className="sm:col-span-2  bg-sky3 light " src="/tool-logos/react.svg" alt="React" />
           <Li
