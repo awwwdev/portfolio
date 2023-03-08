@@ -6,6 +6,7 @@ import NextImage from "next/image";
 import { GetStaticProps } from "next";
 import useColorScheme from "@/hooks/useColorScheme";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.url);
@@ -26,7 +27,8 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
 
 const PostLayout = ({ post }: { post: Post }) => {
   const MDXContent = useMDXComponent(post.body.code);
-
+  const router = useRouter();
+  const { slug } = router.query;
   return (
     <>
       <Head>
@@ -66,71 +68,73 @@ const PostLayout = ({ post }: { post: Post }) => {
         <div className="max-w-page mx-auto space-y-8">
           <h2 className="H2 c-pink11">Other Works</h2>
           <div className="flex flex-wrap gap-6 ">
-            <Card
-              logoSrc="/momenta/logo.png"
-              darkLogoSrc="/momenta/logo-dark.png"
-              color="c-purple11"
-              bg="bg-purple4"
-              title="MOMENTA"
-              href="/works/momenta"
-              subtitle={
-                <>
-                  Two Crazy Landings
-                </>
-              }
-              stack={
-                <>
-                  <StackLogo icon="i-logos-nextjs-icon" title="NEXTjs" />
-                  <StackLogo icon="i-logos-framer" title="Framer Motion" />
-                  <StackLogo icon="i-logos-figma" title="Figma" />
-                </>
-              }
-            ></Card>
-            <Card
-              logoSrc="/dbilia/logo.png"
-              darkLogoSrc="/dbilia/logo.png"
-              color="c-violet11"
-              bg="bg-violet4"
-              title="DBILIA"
-              href="/works/dbilia"
-              subtitle={
-                <>
-                  Refactoring
-                  <br /> The Unreadable
-                </>
-              }
-              stack={
-                <>
-                  <li className="w-[1.5em] h-[1.5em] rd-full flex jc ac bg-grayA-3">
-                    <img src="/sc-logo2.png" alt="Styled Components" className="w-[0.8em] h-[0.8em] " />
-                  </li>
-                  <StackLogo icon="i-logos-sass" title="Sass and CSS" />
-                  <StackLogo icon="i-logos-react" title="Sass and CSS" />
-                  <StackLogo icon="i-logos-figma" title="Figma" />
-                </>
-              }
-            ></Card>
-            <Card
-              logoSrc="/darsoon/logo.png"
-              darkLogoSrc="/darsoon/logo-dark.png"
-              color="c-orange-11"
-              bg="bg-orange4"
-              title="DARSOON"
-              href="/works/darsoon"
-              subtitle={
-                <>
-                  Restarting <br /> a Start-up
-                </>
-              }
-              stack={
-                <>
-                  <StackLogo icon="i-logos-nextjs-icon" title="NEXTjs" />
-                  <StackLogo icon="i-logos-supabase-icon" title="Supabase" />
-                  <StackLogo icon="i-logos-react-query-icon" title="React Query" />
-                  <StackLogo icon="i-logos-unocss" title="UnoCSS" />
-                </>
-              }
-            ></Card>
+            {slug !== "momenta" && (
+              <Card
+                logoSrc="/momenta/logo.png"
+                darkLogoSrc="/momenta/logo-dark.png"
+                color="c-purple11"
+                bg="bg-purple4"
+                title="MOMENTA"
+                href="/works/momenta"
+                subtitle={<>Two Crazy Landings</>}
+                stack={
+                  <>
+                    <StackLogo icon="i-logos-nextjs-icon" title="NEXTjs" />
+                    <StackLogo icon="i-logos-framer" title="Framer Motion" />
+                    <StackLogo icon="i-logos-figma" title="Figma" />
+                  </>
+                }
+              ></Card>
+            )}
+            {slug !== "dbilia" && (
+              <Card
+                logoSrc="/dbilia/logo.png"
+                darkLogoSrc="/dbilia/logo.png"
+                color="c-violet11"
+                bg="bg-violet4"
+                title="DBILIA"
+                href="/works/dbilia"
+                subtitle={
+                  <>
+                    Refactoring
+                    <br /> The Unreadable
+                  </>
+                }
+                stack={
+                  <>
+                    <li className="w-[1.5em] h-[1.5em] rd-full flex jc ac bg-grayA-3">
+                      <img src="/sc-logo2.png" alt="Styled Components" className="w-[0.8em] h-[0.8em] " />
+                    </li>
+                    <StackLogo icon="i-logos-sass" title="Sass and CSS" />
+                    <StackLogo icon="i-logos-react" title="Sass and CSS" />
+                    <StackLogo icon="i-logos-figma" title="Figma" />
+                  </>
+                }
+              ></Card>
+            )}
+            {slug !== "darsoon" && (
+              <Card
+                logoSrc="/darsoon/logo.png"
+                darkLogoSrc="/darsoon/logo-dark.png"
+                color="c-orange-11"
+                bg="bg-orange4"
+                title="DARSOON"
+                href="/works/darsoon"
+                subtitle={
+                  <>
+                    Restarting <br /> a Start-up
+                  </>
+                }
+                stack={
+                  <>
+                    <StackLogo icon="i-logos-nextjs-icon" title="NEXTjs" />
+                    <StackLogo icon="i-logos-supabase-icon" title="Supabase" />
+                    <StackLogo icon="i-logos-react-query-icon" title="React Query" />
+                    <StackLogo icon="i-logos-unocss" title="UnoCSS" />
+                  </>
+                }
+              ></Card>
+            )}
           </div>
         </div>
       </section>
