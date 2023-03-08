@@ -8,7 +8,8 @@ import transformerVariantGroup from "@unocss/transformer-variant-group";
 import { rules, shortcuts } from "./uno-rules";
 import { darkTheme, lightTheme } from "./uno-radix-colors";
 export default defineConfig<Theme>({
-  rules,
+  include: [/\.(vue|svelte|[jt]sx?|mdx?|html)($|\?)/],
+rules,  
   shortcuts,
   transformers: [transformerVariantGroup()],
   theme: lightTheme,
