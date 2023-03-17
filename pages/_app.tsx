@@ -75,13 +75,12 @@ export default function App({ Component, pageProps }: AppProps) {
                   <Link href="/#About Me">About Me</Link>
                   <Link href="/#Contact">Contact</Link>
                 </nav>
-                <div className="">
+                <div className="my-6">
                   <p className="text-note c-gray9 text-2xs">Built by love
                    <Icon name='i-ph-heart' />
-                   !
                   </p>
                   <p className="text-note c-gray9 text-2xs">
-                    Powered by WebFlo... Kidding! Here is
+                    Powered by WebFlo... Just kidding! Here is
                     {"  "}
                     <a href="https://github.com/vashmeen/portfolio" target="_blank" rel="noreferrer">
                       the source code!
