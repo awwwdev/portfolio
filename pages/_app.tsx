@@ -15,6 +15,7 @@ import Link from "next/link";
 import About from "@/components/About";
 import GetInTouch from "@/components/GetInTouch";
 import Toolkit from "@/components/Toolkit";
+import Icon from '@/components/Icon';
 
 // const sora = Sora({ subsets: ["latin"] });
 // const inter = Inter({ subsets: ["latin"] });
@@ -75,13 +76,19 @@ export default function App({ Component, pageProps }: AppProps) {
                   <Link href="/#Contact">Contact</Link>
                 </nav>
                 <div className="">
-                  <p className="text-note c-gray9 text-2xs">Built by love</p>
+                  <p className="text-note c-gray9 text-2xs">Built by love
+                   <Icon name='i-ph-heart' />
+                   !
+                  </p>
                   <p className="text-note c-gray9 text-2xs">
                     Powered by WebFlo... Kidding! Here is
                     {"  "}
                     <a href="https://github.com/vashmeen/portfolio" target="_blank" rel="noreferrer">
                       the source code!
                     </a>
+                  </p>
+                  <p className="text-note c-gray9 text-2xs">
+                    No AI was used during the creation of this website. 100% Pure Natural Intelligence!
                   </p>
                 </div>
               </div>
