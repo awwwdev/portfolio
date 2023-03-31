@@ -45,7 +45,7 @@ const Darsoon = () => {
           />
         }
         color="c-orange-11"
-        bg="bg-orange4"
+        bg="bg-gradient-to-br from-orange4 via-tomato4 to-red4"
         title="DARSOON"
         href="/works/darsoon"
         subtitle={
@@ -85,7 +85,8 @@ const Dbilia = () => (
     }
     darkLogoSrc="/dbilia/logo.png"
     color="c-violet11"
-    bg="bg-violet4"
+    // bg="bg-violet4"
+    bg="bg-gradient-to-br from-violet4 via-blue4 to-cyan4"
     title="DBILIA"
     href="/works/dbilia"
     subtitle={
@@ -142,7 +143,8 @@ const Momenta = () => {
       }
       showCaseSize="w-50"
       color="c-purple11"
-      bg="bg-purple4"
+      // bg="bg-purple4"
+      bg="bg-gradient-to-br from-purple4 via-plum4 to-pink4"
       title="MOMENTA"
       href="/works/momenta"
       subtitle={
@@ -196,7 +198,7 @@ CardProps) => {
         <span className="sr-only leading-loose">{title} ,</span>
         {subtitle}
       </h3>
-      <ul aria-label="Stack Used" className="mt-8 flex  gap-2">
+      <ul title="Stack Used" className="mt-8 flex  gap-2">
         {stack}
       </ul>
       <div className="mt-16 text-lg leading-loose c-grayA-11 ls-tighter ">{children}</div>
