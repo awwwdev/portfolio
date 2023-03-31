@@ -4,8 +4,8 @@ import About from "@/components/About";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import useColorScheme from "@/hooks/useColorScheme";
-import Toolkit from '@/components/Toolkit';
-import Emoji from '@/components/Emoji';
+import Toolkit from "@/components/Toolkit";
+import Emoji from "@/components/Emoji";
 
 export default function Home() {
   return (
@@ -37,6 +37,13 @@ const Darsoon = () => {
       <Card
         logoSrc="/darsoon/logo.png"
         darkLogoSrc="/darsoon/logo-dark.png"
+        showCase={
+          <img
+            src="/darsoon/mockup.png"
+            alt=""
+            className={` lt-xs:(static w-6/5  mis-auto -mt-4 -mb-12 fade-y-from-30%-to-90% )  xs:abs  -z-1  xs:(w-60 right-0 top-10 ) sm:( right-0  top-10 w-85 ) md:(-right-15 top-5 w-110 ) drop-shadow-xl  `}
+          />
+        }
         color="c-orange-11"
         bg="bg-orange4"
         title="DARSOON"
@@ -68,6 +75,14 @@ const Darsoon = () => {
 const Dbilia = () => (
   <Card
     logoSrc="/dbilia/logo.png"
+    // showCaseSrc=""
+    showCase={
+      <img
+        src="/dbilia/mockup.png"
+        alt=""
+        className={`lt-xs:(static  w-4/5 mis-auto -mb-26 -mt-10 fade-y-from-40%-to-70% )  xs:abs  -z-1  xs:(w-40 right-0 top-0 ) sm:(-right-0 -top-0 w-60)  md:(-right-15 -top-5 w-80) drop-shadow-xl `}
+      />
+    }
     darkLogoSrc="/dbilia/logo.png"
     color="c-violet11"
     bg="bg-violet4"
@@ -102,6 +117,9 @@ type CardProps = {
   title: string;
   logoSrc: string;
   darkLogoSrc: string;
+  showCaseSrc?: string;
+  showCaseSize?: string;
+  showCase?: React.ReactNode;
   href: string;
   subtitle: React.ReactNode;
   children: React.ReactNode;
@@ -115,13 +133,22 @@ const Momenta = () => {
     <Card
       logoSrc="/momenta/logo.png"
       darkLogoSrc="/momenta/logo-dark.png"
+      showCase={
+        <img
+          src="/momenta/mockup.png"
+          alt=""
+          className={`  lt-xs:(static fade-y-from-30%-to-70% -mb-26 !-mt-5 -mie-5  w-4/5 mis-auto mt-8 fade-y-from-10%-to-80% !-mb-32)  xs:abs  -z-1  xs:( right-0 top-5 w-45 ) sm:( -right-0  top-5 w-65 ) md:(-right-13 -top-10 w-80) drop-shadow-xl `}
+        />
+      }
+      showCaseSize="w-50"
       color="c-purple11"
       bg="bg-purple4"
       title="MOMENTA"
       href="/works/momenta"
       subtitle={
         <>
-          Two Crazy<br /> Landings
+          Two Crazy
+          <br /> Landings
         </>
       }
       stack={
@@ -144,6 +171,9 @@ const Momenta = () => {
 
 const Card = ({
   logoSrc = "",
+  showCaseSrc = "",
+  showCaseSize = "w-140",
+  showCase,
   darkLogoSrc = "",
   title = "",
   subtitle = "",
@@ -157,11 +187,12 @@ CardProps) => {
   const { resolvedTheme } = useColorScheme();
 
   return (
-    <article className={`rd-6 overflow-hidden min-h-150 sm:min-h-180 p-6 sm:p-10 flex flex-col ${bg}`}>
-      <div>
+    <article className={`rd-6 rel isolate  min-h-150 sm:min-h-180 p-6 sm:p-10 flex flex-col ${bg}`}>
+      <div className="">
         <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-5 w-auto lt-sm:mt-1" />
       </div>
-      <h3 className={`mt-16 block  fw-900 text-4xl sm:text-6xl ${color} `}>
+      {showCase}
+      <h3 className={`lt-xs:mt-0 mt-16 block  fw-900 text-4xl md:text-6xl ${color} `}>
         <span className="sr-only leading-loose">{title} ,</span>
         {subtitle}
       </h3>
@@ -170,7 +201,7 @@ CardProps) => {
       </ul>
       <div className="mt-16 text-lg leading-loose c-grayA-11 ls-tighter ">{children}</div>
       <div className="mt-auto flex justify-end ">
-        <Link href={href} className={`flex ac jc p4 sm:p6 rd-xl bg-grayA-3  ${color} `}>
+        <Link href={href} className={`flex ac jc p4 sm:p6 lt-xs:mt-10 rd-xl bg-grayA-3 hover:bg-grayA-4  ${color} `}>
           <span className="i-ph-arrow-right inline-block text-3xl sm:text-4xl" />
           <span className="sr-only"> Learn more</span>
         </Link>

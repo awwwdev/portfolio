@@ -21,7 +21,7 @@ const GetInTouch = () => {
           <li>
             <a
               href="https/github.com/vashmeen"
-              className="c-gray11 !mt-20  flex ac  bf-i-logos-github-icon before:opacity-100 @dark:before:filter-invert-100    "
+              className="c-gray11 before:grayscale  !mt-20  flex ac  bf-i-logos-github-icon before:opacity-100 @dark:before:filter-invert-100    "
             >
               My GitHub
             </a>

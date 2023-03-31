@@ -50,7 +50,7 @@ p a,
   text-decoration-line: underline;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 40rem) {
   .mobile-sr-only {
     position: absolute;
     width: 1px;
@@ -64,12 +64,12 @@ p a,
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 40rem) {
   .desktop-only {
     display: none;
   }
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 40rem) {
   .mobile-only {
     display: none;
   }

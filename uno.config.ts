@@ -12,7 +12,15 @@ export default defineConfig<Theme>({
   rules,
   shortcuts,
   transformers: [transformerVariantGroup()],
-  theme: lightTheme,
+  theme: {
+    colors: lightTheme.colors,
+    breakpoints: {
+      xs: '30rem',
+      sm: '40rem',
+      md: '64rem',
+    }
+  } ,
+    
   presets: [
     presetUno({
       dark: { light: ".light", dark: ".dark" },

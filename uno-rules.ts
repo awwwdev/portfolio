@@ -46,6 +46,11 @@ export const rules: Rule[] = [
   ["text-2xs", { "font-size": "0.6rem", "line-height": "1.25rem" }],
   ["max-w-article", { "max-width": "60ch" }],
   ["max-w-page", { "max-width": "100rem" }],
+  [
+    /^fade-y-from-(.*)-to-(.*)$/,
+    ([, from,  to]: string[]) => ({ "mask-image": `linear-gradient(to bottom, black ${from}, transparent ${to})` }),
+  ],
+
   [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
   [
     /^grid-min-col-(.*)$/,
