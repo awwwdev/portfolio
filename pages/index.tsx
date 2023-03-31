@@ -80,7 +80,7 @@ const Dbilia = () => (
       <img
         src="/dbilia/mockup.png"
         alt=""
-        className={`lt-xs:(static  w-4/5 mis-auto -mb-26 -mt-10 fade-y-from-40%-to-70% )  xs:abs  -z-1  xs:(w-40 right-0 top-0 ) sm:(-right-0 -top-0 w-60)  md:(-right-15 -top-5 w-80) drop-shadow-xl `}
+        className={`lt-xs:(static  w-4/5 mis-auto -mb-26 -mt-10 fade-y-from-40%-to-70% )  xs:abs  -z-1  xs:(w-40 right-0 top-0 ) sm:(-right-0 -top-0 w-60)  md:(-right-15 -top-5 w-80) drop-shadow-2xl `}
       />
     }
     darkLogoSrc="/dbilia/logo.png"

@@ -8,6 +8,11 @@ import transformerVariantGroup from "@unocss/transformer-variant-group";
 import { rules, shortcuts } from "./uno-rules";
 import { darkTheme, lightTheme } from "./uno-radix-colors";
 export default defineConfig<Theme>({
+  safelist: [
+    "c-violet4", "c-blue4" , "c-cyan4",
+    "c-purple4" , "c-plum4" ,"c-pink4",
+    "c-orange4", "c-tomato4" , "c-red4"
+  ],
   include: [/\.(tsx|mdx)($|\?)/],
   rules,
   shortcuts,
