@@ -207,7 +207,7 @@ CardProps) => {
       <div className="mt-auto flex justify-end ">
         <Link
           href={href}
-          className={`flex ac jc p4 sm:p6 lt-xs:mt-10 rd-xl b-1.5 b-grayA-3 bg-origin-border bg-gradient-to-r  from-grayA-1 to-transparent hover:(from-grayA-2 to-grayA-2)  ${color}  `}
+          className={`flex ac jc p4 sm:p6 lt-xs:mt-10 rd-xl b-1.5 b-grayA-3 bg-grayA-1 hover:(bg-grayA-2)  ${color}  `}
         >
           <span className="i-ph-arrow-right inline-block text-3xl sm:text-4xl" />
           <span className="sr-only"> Learn more</span>
