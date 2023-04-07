@@ -116,8 +116,10 @@ export const shortcuts: UserShortcuts = [
     "btn-prm":
       " b-1  fw-500 px-6 py-2 rd-lg b-orange10 bg-orange10 c-white  hover:(bg-orange9 b-orange9) focus:(bg-orange9 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
     btn: " b-1  fw-500 px-6 py-2 rd-lg b-gray10 bg-gray10 c-white  hover:(bg-gray9 b-gray9) focus:(bg-gray9 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
+    "btn-prm-grd":
+      "btn-common b-transparent bg-origin-border bg-gradient-to-l from-prm7 to-prm9 c-white  hover:(bg-prm10 bg-gradient-to-l from-blue10 to-indigo10) focus-visible:(bg-prm10 bg-gradient-to-l from-blue10 to-indigo10) active:(bg-prm11 bg-gradient-to-l from-blue11 to-indigo11) disabled:(btn-disabled)",
     "btn-ghost-prm":
-      " b-1  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+      " b-1  fw-500 px-6 py-2 rd-lg b-prm9 c-prm11 active:(b-prm11 bg-prm1) hover:(b-prm9  bg-prm1)  focus:(b-prm9  bg-prm1) disabled:(btn-disabled)",
     "btn-ghost":
       " b-1  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-link-prm":

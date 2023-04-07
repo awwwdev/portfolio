@@ -15,7 +15,7 @@ import Link from "next/link";
 import About from "@/components/About";
 import GetInTouch from "@/components/GetInTouch";
 import Toolkit from "@/components/Toolkit";
-import Icon from '@/components/Icon';
+import Icon from "@/components/Icon";
 
 // const sora = Sora({ subsets: ["latin"] });
 // const inter = Inter({ subsets: ["latin"] });
@@ -51,8 +51,10 @@ export default function App({ Component, pageProps }: AppProps) {
             </div> */}
             <header>
               <nav className=" py-3  flex justify-between max-w-page mx-auto sm:px-8 px-4">
-                <Link href="/" className="bf-i-ph-house-simple fw-900" title="Home" />
-                <ThemeToggler className="" />
+                <Link href="/" className="c-gray11 " aria-lebel="Home">
+                  <img className="dark:filter-invert" src="/icons/home.svg" height={18} width={18} />
+                </Link>
+                <ThemeToggler className="c-gray11" />
               </nav>
             </header>
             <main id="main-content">
@@ -76,8 +78,9 @@ export default function App({ Component, pageProps }: AppProps) {
                   <Link href="/#Contact">Contact</Link>
                 </nav>
                 <div className="my-6">
-                  <p className="text-note c-gray9 text-2xs">Built by love
-                   <Icon name='i-ph-heart' />
+                  <p className="text-note c-gray9 text-2xs">
+                    Built by love
+                    <Icon name="i-ph-heart" />
                   </p>
                   <p className="text-note c-gray9 text-2xs">
                     Powered by WebFlo... Just kidding! Here is

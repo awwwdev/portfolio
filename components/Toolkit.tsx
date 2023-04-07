@@ -125,7 +125,7 @@ type LiProps = {
 };
 const Li = (props: LiProps) => {
   return (
-    <li className={`toolkit__grid-item p-4 rd-4 flex jc ac ${props.className}`}>
+    <li className={`toolkit__grid-item p-4 rd-4 flex jc ac b-1.5 b-grayA-3 empty:b-transparent bg-origin-border ${props.className}`}>
       {props.icon && <Icon name={props.icon} alt={props.alt} className={`${props.size}`} />}
       {props.src && <img src={props.src} alt={props.alt} className={`object-cover  ${props.size}`} />}
     </li>
