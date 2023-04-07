@@ -190,7 +190,7 @@ CardProps) => {
 
   return (
     <article
-      className={`rd-6 rel isolate b-1.5 b-grayA-4 bg-origin-border  min-h-150 sm:min-h-180 p-6 sm:p-10 flex flex-col ${bg}`}
+      className={`rd-6 rel isolate b-1.5 b-grayA-3 dark:b-grayA-4 bg-origin-border  min-h-150 sm:min-h-180 p-6 sm:p-10 flex flex-col ${bg}`}
     >
       <div className="">
         <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-5 w-auto lt-sm:mt-1" />
@@ -207,7 +207,7 @@ CardProps) => {
       <div className="mt-auto flex justify-end ">
         <Link
           href={href}
-          className={`flex ac jc p4 sm:p6 lt-xs:mt-10 rd-xl b-1.5 b-grayA-2 bg-origin-border bg-grayA-2 hover:bg-grayA-3  ${color} `}
+          className={`flex ac jc p4 sm:p6 lt-xs:mt-10 rd-xl b-1.5 b-grayA-3 bg-origin-border bg-gradient-to-r  from-grayA-1 to-transparent hover:(from-grayA-2 to-grayA-2)  ${color}  `}
         >
           <span className="i-ph-arrow-right inline-block text-3xl sm:text-4xl" />
           <span className="sr-only"> Learn more</span>
@@ -243,7 +243,7 @@ const Teaching = () => {
   );
 };
 
-const StackLogo = ({ icon = "", title = "", bgColor = "bg-grayA-3" }) => (
+const StackLogo = ({ icon = "", title = "", bgColor = "bg-gradient-to-r from-grayA-3 to-grayA-2" }) => (
   <li className={`w-[2.5em] h-[2.5em] rd-full flex jc ac b-1.5 b-grayA-2 bg-origin-border ${bgColor} `}>
     <span className={`inline-block ${icon}`}>
       <span className="sr-only">{title}</span>

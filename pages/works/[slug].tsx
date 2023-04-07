@@ -34,7 +34,7 @@ const PostLayout = ({ post }: { post: Post }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <article className=" py-8 article max-w-xl mx-auto sm:px-8 px-4">
+      <article className=" py-8 article max-w-page  mx-auto sm:px-8 px-4">
         <div>
           <h1 className="H1">{post.title}</h1>
           <time dateTime={post.date} className="text-xs c-gray11 mb-1">
@@ -64,16 +64,16 @@ const PostLayout = ({ post }: { post: Post }) => {
           }}
         />
       </article>
-      <section className="mt-20 bg-pink2 py-32">
+      <section className="mt-20  py-32">
         <div className="max-w-page mx-auto space-y-8">
-          <h2 className="H2 c-pink11">Other Works</h2>
+          <h2 className="H2 c-gray8">Other Works</h2>
           <div className="flex flex-wrap gap-6 ">
             {slug !== "momenta" && (
               <Card
                 logoSrc="/momenta/logo.png"
                 darkLogoSrc="/momenta/logo-dark.png"
                 color="c-purple11"
-                bg="bg-purple4"
+                bg="bg-gradient-to-br from-purple4 via-plum4 to-pink4"
                 title="MOMENTA"
                 href="/works/momenta"
                 subtitle={<>Two Crazy Landings</>}
@@ -91,7 +91,7 @@ const PostLayout = ({ post }: { post: Post }) => {
                 logoSrc="/dbilia/logo.png"
                 darkLogoSrc="/dbilia/logo.png"
                 color="c-violet11"
-                bg="bg-violet4"
+                bg="bg-gradient-to-br from-violet4 via-blue4 to-cyan4"
                 title="DBILIA"
                 href="/works/dbilia"
                 subtitle={
@@ -117,7 +117,8 @@ const PostLayout = ({ post }: { post: Post }) => {
                 logoSrc="/darsoon/logo.png"
                 darkLogoSrc="/darsoon/logo-dark.png"
                 color="c-orange-11"
-                bg="bg-orange4"
+                // bg="bg-orange4"
+                bg="bg-gradient-to-br from-orange4 via-tomato4 to-red4"
                 title="DARSOON"
                 href="/works/darsoon"
                 subtitle={
@@ -178,7 +179,7 @@ CardProps) => {
 
   return (
     <Link href={href} className={`block  `}>
-      <article className={`rd-6 overflow-hidden min-h-80  p-8 flex flex-col ${bg}`}>
+      <article className={`rd-6 overflow-hidden min-h-80   b-1 b-grayA-2 bg-origin-border  p-8 flex flex-col ${bg}`}>
         <div>
           <img src={resolvedTheme === "dark" ? darkLogoSrc : logoSrc} alt={title} className="h-4 w-auto lt-sm:mt-1" />
         </div>
@@ -194,8 +195,8 @@ CardProps) => {
   );
 };
 
-const StackLogo = ({ icon = "", title = "", bgColor = "bg-grayA-3" }) => (
-  <li className={`w-[1.5em] h-[1.5em] rd-full flex jc ac ${bgColor} `}>
+const StackLogo = ({ icon = "", title = "", bgColor = "bg-gradient-to-r from-grayA-3 to-grayA-2" }) => (
+  <li className={`w-[1.5em] h-[1.5em] rd-full flex jc ac  b-1.5 b-grayA-1 bg-origin-border ${bgColor} `}>
     <span className={`inline-block ${icon} text-2xs`}>
       <span className="sr-only">{title}</span>
     </span>
