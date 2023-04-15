@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
             </div> */}
             <header>
               <nav className=" py-3  flex justify-between max-w-page mx-auto sm:px-8 px-4">
-                <Link href="/" className="c-gray11 " aria-lebel="Home">
+                <Link href="/" className="c-gray11 " aria-label="Home">
                   <img className="dark:filter-invert" src="/icons/home.svg" height={18} width={18} />
                 </Link>
                 <ThemeToggler className="c-gray11" />
@@ -72,24 +72,20 @@ export default function App({ Component, pageProps }: AppProps) {
             </main>
             <footer className=" pb6">
               <div className="mx-auto max-w-page sm:px-8 px-4   pb-3 ">
-                <nav className="flex ac  py-4 gap-4 c-gray9 text-note b-t-1 b-gray5">
+                <nav className="flex ac  py-4 gap-4 c-gray11 text-note b-t-1 b-gray5">
                   <Link href="/#works">Works</Link>
                   <Link href="/#About Me">About Me</Link>
                   <Link href="/#Contact">Contact</Link>
                 </nav>
                 <div className="my-6">
-                  <p className="text-note c-gray9 text-2xs">
-                    Built by love
-                    <Icon name="i-ph-heart" />
-                  </p>
-                  <p className="text-note c-gray9 text-2xs">
-                    Powered by WebFlo... Just kidding! Here is
+                  <p className="text-note c-gray11 text-2xs">
+                    Built by love. Powered by WebFlo... Just kidding! Here is
                     {"  "}
                     <a href="https://github.com/vashmeen/portfolio" target="_blank" rel="noreferrer">
                       the source code!
                     </a>
                   </p>
-                  <p className="text-note c-gray9 text-2xs">
+                  <p className="text-note c-gray11 text-2xs">
                     No AI was used during the creation of this website. 100% Pure Natural Intelligence!
                   </p>
                 </div>
